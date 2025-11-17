@@ -25,26 +25,20 @@ west build -p -b le_jlwffre \
 
 ## TODOs
 
-- [ ] can the presses in macro_press and _release be consolidated in a single item?
-- [ ] try to set up #defines for bigger keycodes like BACK, FWD, etc.
 - [ ] format everything nicely https://zmk.dev/docs/development/contributing/documentation#formatting-and-linting-your-changes
 - [ ] make aliases of more of the complex key-presses
 - [ ] why can't I use BACK and FWD here? `sensor-bindings = <&inc_dec_kp LG(RBKT) LG(LBKT)>;`
   - look into this option:  https://zmk.dev/docs/keymaps/behaviors/sensor-rotate#variable-sensor-rotation
 - [ ] mouse emu isn't going to work on STM at all. Remove this and move base references to fun and med instead?
 - [ ] re:  mse layer SCRL_* keys: try out other options for scrolling
+- [ ] can values like `quick-tap-ms = <220>;` be consolidated somewhere? 
+    - can it be `#define QUICK_TAP_MS 220` and then `quick-tap-ms = <QUICK_TAP_MS>;`?
+- [ ] use this approach to rename layers:  [Layer Behaviors](https://zmk.dev/docs/keymaps/behaviors/layers#defines-to-refer-to-layers)
+- [ ] why doesn't the encoder rotation work on the STM PCB?
 
 ### Active
 
-- [ ] config encoder https://zmk.dev/docs/features/encoders
-- [ ] implement mod morphs (key overrides) https://zmk.dev/docs/keymaps/behaviors/mod-morph
-- [ ] on `st`/`shift_tap`, try removing or reducing `require-prior-idle-ms = <125>;` this or lowering it
 - [ ] [troubleshoot pair-related macros](./macro-troubleshooting.md) 
-- [ ] Review [macro configuration options](https://zmk.dev/docs/keymaps/behaviors/macros#macro-controls)
-  - `wait-ms`:  time between execution of bindings
-  - `tap-ms`:  the amount of time bindings will be "held"
-  - [ ] for most macros, I can probably eliminate both `wait-ms` and `tap-ms` entirely
-  - [ ] for QMK macros where I have introduced a pause, try [using `macro_wait_time`](https://zmk.dev/docs/keymaps/behaviors/macros#wait-time) 
 
 ### Done
  - [x] is there a wait time before a layer hold can effect the hold?
@@ -61,3 +55,13 @@ west build -p -b le_jlwffre \
 - [x] update the "build scripts" above to use `-d` to specify a unique output location for each
 - [x] implement any missing leader key sequences/macros
     -  new browser tab, you jerk
+- [x] on `st`/`shift_tap`, try removing or reducing `require-prior-idle-ms = <125>;` this or lowering it
+- [x] config encoder https://zmk.dev/docs/features/encoders
+- [x] implement mod morphs (key overrides) https://zmk.dev/docs/keymaps/behaviors/mod-morph
+- [x] can the presses in macro_press and _release be consolidated in a single item?
+- [x] try to set up `#define`s for bigger keycodes like BACK, FWD, etc.
+- [x] Review [macro configuration options](https://zmk.dev/docs/keymaps/behaviors/macros#macro-controls)
+    - `wait-ms`:  time between execution of bindings; default is `15`
+    - `tap-ms`:  the amount of time bindings will be "held"; default is `30`
+    - [x] for most macros, I can probably eliminate both `wait-ms` and `tap-ms` entirely
+    - [x] for QMK macros where I have introduced a pause, try [using `macro_wait_time`](https://zmk.dev/docs/keymaps/behaviors/macros#wait-time) 
