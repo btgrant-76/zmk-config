@@ -26,19 +26,21 @@ west build -p -b le_jlwffre \
 ## TODOs
 
 - [ ] format everything nicely https://zmk.dev/docs/development/contributing/documentation#formatting-and-linting-your-changes
-- [ ] make aliases of more of the complex key-presses
 - [ ] why can't I use BACK and FWD here? `sensor-bindings = <&inc_dec_kp LG(RBKT) LG(LBKT)>;`
+  - read the ZMK encoder docs
   - look into this option:  https://zmk.dev/docs/keymaps/behaviors/sensor-rotate#variable-sensor-rotation
 - [ ] mouse emu isn't going to work on STM at all. Remove this and move base references to fun and med instead?
 - [ ] re:  mse layer SCRL_* keys: try out other options for scrolling
 - [ ] can values like `quick-tap-ms = <220>;` be consolidated somewhere? 
     - can it be `#define QUICK_TAP_MS 220` and then `quick-tap-ms = <QUICK_TAP_MS>;`?
 - [ ] use this approach to rename layers:  [Layer Behaviors](https://zmk.dev/docs/keymaps/behaviors/layers#defines-to-refer-to-layers)
-- [ ] why doesn't the encoder rotation work on the STM PCB?
+- [ ] I shouldn't have to [change the `status` fields in `le_chiffre_stm32.dts` in order to enable the encoder](https://github.com/petejohanson/le-chiffre-stm32-zmk-config/commit/ef42fbbdff2ecf1a71faac5307f86ff84200190d). What't the correct way to do this from the keymap/config side?
+  - I could try to *disable* the encoder from within the `.keymap` file to see if that works. That might help me to identify if I'm putting the override in the right place.
 
 ### Active
 
 - [ ] [troubleshoot pair-related macros](./macro-troubleshooting.md) 
+
 
 ### Done
  - [x] is there a wait time before a layer hold can effect the hold?
@@ -65,3 +67,63 @@ west build -p -b le_jlwffre \
     - `tap-ms`:  the amount of time bindings will be "held"; default is `30`
     - [x] for most macros, I can probably eliminate both `wait-ms` and `tap-ms` entirely
     - [x] for QMK macros where I have introduced a pause, try [using `macro_wait_time`](https://zmk.dev/docs/keymaps/behaviors/macros#wait-time) 
+- [x] make aliases of more of the complex key-presses
+- [x] why doesn't the encoder rotation work on the STM PCB? Try moving `encoder` and `sensors` to where `chosen` is.
+    - [x] I think I found one of the above options in Sporkus's ZMK config repo. I could check there again to see if the state of any of his files are different from mine.
+    - [ ] ~~if I don't find anything useful in Sporkus's repo, ask on the ZMK Discord~~
+
+I tried this:
+```
+{
+    chosen {
+        zmk,matrix_transform = &transform_with_encoder;
+    };
+    
+    encoder {
+        status = "okay";
+    };
+
+    sensors {
+        status = "okay";
+    };
+};
+```
+
+... this ...
+```
+/ {
+    chosen {
+        zmk,matrix_transform = &transform_with_encoder;
+    };
+};
+
+&encoder {
+    status = "okay";
+};
+
+&sensors {
+    status = "okay";
+};
+```
+... and I tried enabling both in the `le_chiffre_stm32.dts` file.
+
+```
+encoder: encoder {
+    compatible = "alps,ec11";
+    label = "ENCODER";
+    a-gpios = <&gpiob 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    b-gpios = <&gpiob 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+steps = <30>;
+    /* status = "disabled"; */
+    status = "okay";
+};
+
+sensors: sensors {
+    compatible = "zmk,keymap-sensors";
+    /* status = "disabled"; */
+    status = "okay";
+    sensors = <&encoder>;
+
+triggers-per-rotation = <15>;
+};
+```
