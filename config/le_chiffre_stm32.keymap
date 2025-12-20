@@ -1,0 +1,529 @@
+/*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/pointing.h>
+
+/* STM-only overrides begin */
+/ {
+    chosen {
+        zmk,matrix_transform = &transform_with_encoder;
+    };
+};
+
+&encoder {
+    status = "okay";
+};
+
+&sensors {
+    status = "okay";
+};
+/* STM-only overrides end */
+
+// Home row mods macro
+#define HRML(k1,k2,k3,k4) &ht LCTRL k1  &ht LALT k2  &ht LGUI k3  &st LSHFT k4
+#define HRMR(k1,k2,k3,k4) &st RSHFT k1  &ht RGUI k2  &ht LALT k3  &ht RCTRL k4
+
+#define BACK &kp LG(LBKT)
+#define FWD &kp LG(RBKT)
+#define MISS_CTL &kp LC(UP)
+
+/* base */
+#define Z_HYPR &ht LC(LA(LG(LSHFT))) Z
+#define SLS_HYPR &ht LC(LA(LG(LSHFT))) FSLH
+#define B_MEH &ht LC(LA(LSHFT)) B
+#define N_MEH &ht LC(LA(LSHFT)) N
+
+/* macros */
+#define UNDO_  &kp LG(Z)
+#define CUT_   &kp LG(X)
+#define COPY_  &kp LG(C)
+#define PASTE_ &kp LG(V)
+#define REDO_  &kp LS(LG(Z))
+
+#define TAB_LFT &kp LS(LG(LBKT))
+#define TAB_RGT &kp LS(LG(RBKT))
+
+/ {
+    behaviors {
+        lt: layer_tap { // this overrides the built-in layer-tap configuration https://zmk.dev/docs/keymaps/behaviors/hold-tap#custom-hold-tap-examples
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <145>;
+            quick-tap-ms = <220>;
+            bindings = <&mo>, <&kp>;
+        };
+        ht: hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <145>;
+            quick-tap-ms = <220>;
+            require-prior-idle-ms = <125>;
+            bindings = <&kp>, <&kp>;
+        };
+        st: shift_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <105>;
+            quick-tap-ms = <220>;
+            bindings = <&kp>, <&kp>;
+        };
+        mt: mod_tap {
+            #binding-cells = <2>;
+            tapping-term-ms = <145>;
+            quick-tap-ms = <220>;
+            require-prior-idle-ms = <125>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        /* mod-morphs begin */
+        z_esc: z_to_esc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <Z_HYPR>, <&kp ESC>;
+            mods = <(MOD_RCTL)>;
+        };
+        sls_ent: slash_to_enter {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <SLS_HYPR>, <&kp RETURN>;
+            mods = <(MOD_LCTL)>;
+        };
+        cma_lbkt: comma_to_left_bracket { // this does not work :(
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR>, <&kp RPAR>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+        };
+        cma_lprn: comma_left_paren {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&cma_lbkt>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+        lbkt_par: left_bracket_to_paren {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT>, <&kp LPAR>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+        rbkt_par: right_bracket_to_paren {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RBKT>, <&kp RPAR>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+        dot_rprn: dot_right_paren {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp RPAR>;
+            mods = <(MOD_LCTL)>;
+        };
+        /** numpad morphs begin **/
+        grv_slsh: grave_to_slash {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE>, <&kp FSLH>;
+            mods = <(MOD_LCTL)>;
+        };
+        mins_space: minus_to_space {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp SPACE>;
+            mods = <(MOD_LCTL)>;
+        };
+        semi_quot: semicolon_to_quote {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SEMI>, <&kp SQT>;
+            mods = <(MOD_LCTL)>;
+        };
+        three_dot: three_to_dot {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N3>, <&kp DOT>;
+            mods = <(MOD_LCTL)>;
+        };
+        two_comma: two_to_comma {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N2>, <&kp COMMA>;
+            mods = <(MOD_LCTL)>;
+        };
+        zero_space: zero_to_space {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N0>, <&kp SPACE>;
+            mods = <(MOD_LCTL)>;
+        };
+        bslsh_enter: bslsh_to_enter {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSLH>, <&kp RETURN>;
+            mods = <(MOD_LCTL)>;
+        };
+        /** numpad morphs end **/
+        /* mod-morphs end */
+
+        leader: leader {
+            compatible = "zmk,behavior-leader-key";
+            #binding-cells = <0>;
+
+            // vim
+            vim_write_ls       { sequence = <V W>; bindings = <&vim_w>; };
+            vim_write_quit_ls  { sequence = <V Q>; bindings = <&vim_wq>; };
+
+            // parens
+            parens_ls               { sequence = <P A>; bindings = <&pair LPAR RPAR>; };
+            parens_ins_ls           { sequence = <P I>; bindings = <&pair_insert LPAR RPAR>; };
+            /* ZMK 0.4 memory savings */
+            parens_semi_ls          { sequence = <P S A>; bindings = <&pair_w_semi LPAR RPAR>; };
+            parens_semi_ins_ls      { sequence = <P S I>; bindings = <&pair_insert_w_semi LPAR RPAR>; };
+            /**/
+
+            // brackets
+            bracket_ls              { sequence = <B A>; bindings = <&pair LBKT RBKT>; };
+            bracket_ins_ls          { sequence = <B I>; bindings = <&pair_insert LBKT RBKT>; };
+            /* ZMK 0.4 memory savings */
+            bracket_semi_ls         { sequence = <B S A>; bindings = <&pair_w_semi LBKT RBKT>; };
+            bracket_semi_ins_ls     { sequence = <B S I>; bindings = <&pair_insert_w_semi LBKT RBKT>; };
+            /**/
+
+            // curly braces
+            curly_brace_ls          { sequence = <C A>; bindings = <&pair LBRC RBRC>; };
+            curly_brace_ins_ls      { sequence = <C I>; bindings = <&pair_insert LBRC RBRC>; };
+            /* ZMK 0.4 memory savings */
+            curly_brace_semi_ls     { sequence = <C S A>; bindings = <&pair_w_semi LBRC RBRC>; };
+            curly_brace_semi_ins_ls { sequence = <C S I>; bindings = <&pair_insert_w_semi LBRC RBRC>; };
+            /**/
+
+            // back-tick/grave
+            grave_ins_ls            { sequence = <G I>; bindings = <&pair_insert GRAVE GRAVE>; };
+            code_fence_ls           { sequence = <C F>; bindings = <&code_fence>; };
+
+            // quotes
+            quote_ins_ls            { sequence = <Q I>;   bindings = <&pair_insert SQT SQT>; };
+            dquote_ins_ls           { sequence = <D Q I>; bindings = <&pair_insert DQT DQT>; };
+
+            // HTML tags
+            /* ZMK 0.4 memory savings */
+            tag_open_in_ls          { sequence = <T O>; bindings = <&tag_open_insert>; };
+            tag_close_in_ls         { sequence = <T C>; bindings = <&tag_close_insert>; };
+            tag_void_in_ls          { sequence = <T V>; bindings = <&tag_void_insert>; };
+            /**/
+
+            // others
+            /* ZMK 0.4 memory savings */
+            updir_ls                { sequence = <U D>; bindings = <&up_dir>; };
+            /**/
+            js_log_ls               { sequence = <L O G>; bindings = <&js_log>; };
+            js_af_ls                { sequence = <A F>; bindings = <&js_arr_fun>; };
+            caps_lock_ls            { sequence = <C L>; bindings = <&macos_caps>; };
+            new_browser_window_ls   { sequence = <N>; bindings = <&new_browser_window>; };
+        };
+
+        combos {
+            compatible = "zmk,combos";
+            combo_fun_layer {
+                timeout-ms = <50>;
+                key-positions = <30 31>;
+                bindings = <&mo 4>;
+                layers = <0>;
+            };
+            combo_sym_layer {
+                timeout-ms = <50>;
+                // key-positions = <33 34>; // Jwlffre
+                key-positions = <32 33>; // STM Chiffre
+                bindings = <&mo 1>;
+                layers = <0>;
+            };
+        };
+    };
+
+
+    macros {
+        up_dir: up_dir {
+            #binding-cells = <0>;
+            compatible = "zmk,behavior-macro";
+            bindings = <&kp DOT &kp DOT &kp FSLH>;
+        };
+        code_fence: code_fence {
+            #binding-cells = <0>;
+            compatible = "zmk,behavior-macro";
+            bindings = <&kp GRAVE &kp GRAVE &kp GRAVE &kp RETURN &kp RETURN &kp GRAVE &kp GRAVE &kp GRAVE &kp UP &kp UP>; // TODO UP UP or UP LEFT?
+        };
+        vim_w: vim_write {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ESC &kp COLON &kp W &kp ENTER>;
+        };
+        vim_wq: vim_write_and_quit {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ESC &kp COLON &kp W &kp Q &kp ENTER>;
+        };
+        log_out: log_out {
+            #binding-cells = <0>;
+            compatible = "zmk,behavior-macro";
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings =
+                <&macro_press   &kp LCTRL &kp LGUI>,
+                <&macro_tap     &kp Q>,
+                <&macro_release &kp LCTRL &kp LGUI>;
+        };
+        scrn2clp: scrn2clp {
+            #binding-cells = <0>;
+            compatible = "zmk,behavior-macro";
+            bindings =
+                <&macro_press   &kp LGUI &kp LCTRL &kp LSHFT>,
+                <&macro_tap     &kp N4>,
+                <&macro_release &kp LGUI &kp LCTRL &kp LSHFT>;
+        };
+        scrn2fl: scrn2fl {
+            #binding-cells = <0>;
+            compatible = "zmk,behavior-macro";
+            bindings =
+                <&macro_press   &kp LGUI &kp LSHFT>,
+                <&macro_tap     &kp N4>,
+                <&macro_release &kp LGUI &kp LSHFT>;
+        };
+        pair: pair {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            bindings = <&macro_param_1to1>,
+                       <&kp MACRO_PLACEHOLDER>,
+                       <&macro_param_2to1>,
+                       <&kp MACRO_PLACEHOLDER>;
+        };
+        pair_insert: pair_insert {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            bindings = <&macro_param_1to1>,
+                       <&kp MACRO_PLACEHOLDER>,
+                       <&macro_param_2to1>,
+                       <&kp MACRO_PLACEHOLDER>,
+                       <&kp LEFT>;
+        };
+        /* ZMK 0.4 memory savings */
+        pair_w_semi: pair_w_semi {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            bindings = <&macro_param_1to1>,
+                       <&kp MACRO_PLACEHOLDER>,
+                       <&macro_param_2to1>,
+                       <&kp MACRO_PLACEHOLDER>,
+                       <&kp SEMI>;
+        };
+        pair_insert_w_semi: pair_insert_w_semi {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            bindings = <&macro_param_1to1>,
+                       <&kp MACRO_PLACEHOLDER>,
+                       <&macro_param_2to1>,
+                       <&kp MACRO_PLACEHOLDER>,
+                       <&kp SEMI>,
+                       <&kp LEFT>,
+                       <&kp LEFT>;
+        };
+        /**/
+        js_log: javascript_console_log {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = < &kp C &kp O &kp N &kp S &kp O &kp L &kp E &kp DOT
+                         &kp L &kp O &kp G &kp LPAR &kp SQT &kp SQT &kp RPAR &kp SEMI
+                         &kp LEFT &kp LEFT &kp LEFT>;
+        };
+        js_arr_fun: javascript_arrow_function {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp GT &kp SPC &kp LBRC  &kp RBRC
+                        &kp LEFT>;
+        };
+        /* ZMK 0.4 memory savings */
+        tag_open_insert:  html_tag_open_insert {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LT &kp GT &kp LEFT>;
+        };
+        tag_close_insert: html_tag_close_insert {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LT &kp FSLH &kp GT &kp LEFT>;
+        };
+        tag_void_insert: html_tag_void_insert {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LT &kp SPACE &kp FSLH &kp GT &kp LEFT &kp LEFT &kp LEFT>;
+        };
+        /**/
+        new_browser_window: new_browser_window {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <400>;
+            bindings = <&kp LG(N)>,
+                       <&macro_wait_time 40>,
+                       <&kp LG(T) &kp LG(LBRC) &kp LG(W)>;
+        };
+        macos_caps: macos_caps_lock {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <200>; // macOS requires that capslock be held briefly in order to activate
+            bindings = <&kp CAPS>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+        /*
+          Layers
+          0:  Base
+          1:  Symbol/Media // in QMK NRM is in this position
+          2:  Number
+          3:  Navigation
+          4:  Function
+          5:  Mouse
+          6:  Additional
+         */
+        base {
+            display-name = "Base";
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮            ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  Q       │  W       │  F       │  P       │  B       │            │  J       │  L       │  U       │  Y       │ ' "      │
+            &kp Q      &kp W      &kp E      &kp R      &kp T                   &kp Y      &kp U      &kp I      &kp O      &kp P
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤            ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  A       │  R       │  S       │  T       │  G       │            │  M       │  N       │  E       │  I       │ O        │
+            HRML(A,     S,         D,         F)        &kp G                   &kp H      HRMR(J,     K,         L,        SQT)
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤            ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  Z       │  X       │  C       │  D       │  V       │            │  K       │  H       │ , <      │ . >      │ / ?      │
+            &z_esc     &kp X       &kp C      &kp V      B_MEH                   N_MEH       &kp M     &cma_lprn &dot_rprn   &sls_ent
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤            ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                            &lt 5 TAB  &lt 2 BSPC/*&kp C_MUTE*/&lt 3 SPACE &lt 5 DEL  &kp C_MUTE
+        //                                 ╰──────────┴──────────╯            ╰──────────┴──────────╯
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        med { // 1
+            display-name = "Media";
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮            ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │          │          │          │          │            │          │          │          │          │          │
+            &none      &none      &none      &none      &none                   &none      &none      &none      &none      &none
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤            ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │            │          │          │          │          │          │
+           &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &none                   &none      &none      &none      &none      &none
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤            ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │            │          │          │          │          │          │
+            &none      &none      &none      &none      &none                   &none      &none      &none      &none      &none
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤            ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                            &kp C_MUTE &kp C_PP   /*&kp C_PP*/  &none      &none      &kp C_PP
+        //                                 ╰──────────┴──────────╯            ╰──────────┴──────────╯
+            >;
+            sensor-bindings = <&inc_dec_kp C_NEXT C_PREV>;
+        };
+
+        num { // 2
+            display-name = "Number";
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮            ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │          │          │          │          │            │          │          │          │          │          │
+            UNDO_       CUT_        COPY_       PASTE_      REDO_                    &lbkt_par   &kp N7      &kp N8      &kp N9   &rbkt_par
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤            ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │            │          │          │          │          │          │
+            &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHFT &caps_word               &kp EQUAL  &kp N4     &kp N5     &kp N6     &semi_quot
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤            ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │            │          │          │          │          │          │
+            &kp ESC    &none      &leader     &none     &none                &bslsh_enter &kp N1     &two_comma &three_dot &grv_slsh
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤            ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &kp BSPC    &trans   /*&kp HOME*/ &mins_space &zero_space &kp HOME
+        //                                 ╰──────────┴──────────╯            ╰──────────┴──────────╯
+            >;
+            sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
+        };
+
+        nav { // 3
+            display-name = "Navigation";
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮            ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │          │          │          │          │            │          │          │          │          │          │
+             TAB_LFT   BACK        FWD        TAB_RGT  &up_dir                  REDO_      PASTE_      COPY_       CUT_        UNDO_
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤            ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │            │          │          │          │          │          │
+            &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHFT  &kp CAPS                &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp SEMI
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤            ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │            │          │          │          │          │          │
+            &none      &none       &none      &none      &none                  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &kp RETURN
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤            ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &none      &kp N     /*MISS_CTL*/  &none      &none      MISS_CTL
+        //                                 ╰──────────┴──────────╯            ╰──────────┴──────────╯
+            >;
+            sensor-bindings = <&inc_dec_kp LG(RBKT) LG(LBKT)>;
+        };
+
+        fun { // 4
+            display-name = "Function";
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮            ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │          │          │          │          │            │          │          │          │          │          │
+            &log_out   &none      &scrn2clp  &scrn2fl   &none                    &none      &kp F7     &kp F8     &kp F9     &kp F12
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤            ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │            │          │          │          │          │          │
+            &kp LCTRL  &kp LALT   &kp LGUI  &kp LSHFT &kp C_BRI_UP               &none      &kp F4     &kp F5     &kp F6     &kp F11
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤            ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │            │          │          │          │          │          │
+            &none      &none      &none      &none     &kp C_BRI_DN              &none      &kp F1     &kp F2     &kp F3     &kp F10
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤            ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &none      &mo 5     /* &trans */  &mo 6      &none      &trans
+        //                                 ╰──────────┴──────────╯            ╰──────────┴──────────╯
+            >;
+            sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN>;
+        };
+
+        mse { // 5
+            display-name = "Mouse Keys";
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮            ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │          │          │          │          │            │          │          │          │          │          │
+            UNDO_       CUT_        COPY_       PASTE_      REDO_                     &none      &none      &none      &none      &none
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤            ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │            │          │          │          │          │          │
+             &mkp MB5  &mkp MB3   &mkp MB1   &mkp MB2   &none                 &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤            ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │            │          │          │          │          │          │
+            &kp ESC    &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHFT             &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤            ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &none      &none     /*MISS_CTL*/  &none      &none      MISS_CTL
+        //                                 ╰──────────┴──────────╯            ╰──────────┴──────────╯
+            >;
+            sensor-bindings = <&inc_dec_kp LC(LEFT) LC(RIGHT)>;
+        };
+
+        add { // 6
+            display-name = "Additional Features";
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮            ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│          │          │          │          │          │            │          │          │          │          │          │
+          &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none                REDO_      PASTE_      COPY_       CUT_        UNDO_
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤            ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │            │          │          │          │          │          │
+            &none      &none      &none      &none      &none                    &none      &none      &none      &none      &none
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤            ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│          │          │          │          │          │            │          │          │          │          │          │
+            &none      &none      &none      &none      &bootloader             &none      &none      &none      &none      &none
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤            ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &trans     &trans   /*&bootloader*/&trans     &trans     &bootloader
+        //                                 ╰──────────┴──────────╯            ╰──────────┴──────────╯
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>; // normally RGB but not on this board
+        };
+    };
+};
