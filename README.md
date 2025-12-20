@@ -36,6 +36,8 @@ west build -p -b le_jlwffre \
 - [ ] use this approach to rename layers:  [Layer Behaviors](https://zmk.dev/docs/keymaps/behaviors/layers#defines-to-refer-to-layers)
 - [ ] I shouldn't have to [change the `status` fields in `le_chiffre_stm32.dts` in order to enable the encoder](https://github.com/petejohanson/le-chiffre-stm32-zmk-config/commit/ef42fbbdff2ecf1a71faac5307f86ff84200190d). What't the correct way to do this from the keymap/config side?
   - I could try to *disable* the encoder from within the `.keymap` file to see if that works. That might help me to identify if I'm putting the override in the right place.
+- [ ] does the encoder on the STM Chiffre actuate in the same way as on the jlwffre and other QMK boards?
+- [ ] look at the mouse emulation docs re:  different acceleration profiles
 
 ### Active
 
