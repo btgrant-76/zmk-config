@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
+    - name: jlw
+      url-base: https://github.com/josh-l-wang
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -12,5 +14,8 @@ manifest:
     - name: zmk-leader-key
       remote: urob
       revision: v0.3.0
+    - name: zmk-config-jlw
+      remote: jlw
+      revision: main # this should get pinned to 0.3
   self:
     path: config
