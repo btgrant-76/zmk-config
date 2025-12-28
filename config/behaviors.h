@@ -23,7 +23,7 @@
         };
 
         // used by MEH and HYPR tap-holds
-        // TODO would ht and st work better with hold-trigger-key-positions?
+        // TODO would ht work better with hold-trigger-key-positions?
         ht: hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -34,6 +34,24 @@
             quick-tap-ms = <QUICK_TT>;
 //            require-prior-idle-ms = <125>;
             bindings = <&kp>, <&kp>;
+        };
+        htl: hold_tap_left_hand {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <TT_UROB>;
+            quick-tap-ms = <QUICK_TT>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+        };
+        htr: hold_tap_right_hand {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <TT_UROB>;
+            quick-tap-ms = <QUICK_TT>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
         };
         /* not in use
         st: shift_tap {

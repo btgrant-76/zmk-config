@@ -7,10 +7,10 @@
 #define MISS_CTL &kp LC(UP)
 
 /* base */
-#define Z_HYPR &ht LC(LA(LG(LSHFT))) Z
-#define SLS_HYPR &ht LC(LA(LG(LSHFT))) FSLH
-#define B_MEH &ht LC(LA(LSHFT)) B
-#define N_MEH &ht LC(LA(LSHFT)) N
+#define Z_HYPR &htl LC(LA(LG(LSHFT))) Z
+#define SLS_HYPR &htr LC(LA(LG(LSHFT))) FSLH
+#define B_MEH &htl LC(LA(LSHFT)) B
+#define N_MEH &htr LC(LA(LSHFT)) N
 
 /* macros */
 #define UNDO_  &kp LG(Z)
