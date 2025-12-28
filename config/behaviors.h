@@ -16,9 +16,9 @@
         lt: layer_tap { // this overrides the built-in layer-tap configuration https://zmk.dev/docs/keymaps/behaviors/hold-tap#custom-hold-tap-examples
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred"; // TODO try "balanced"
-            tapping-term-ms = <QMK_TT>;
-            quick-tap-ms = <QUICK_TT>;
+            flavor = "balanced";
+            tapping-term-ms = <TT_UROB>;
+            quick-tap-ms = <QTT_UROB>;
             bindings = <&mo>, <&kp>;
         };
 
