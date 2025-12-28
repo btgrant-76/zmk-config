@@ -1,66 +1,85 @@
+#define QUICK_TT 220
+
+// settings ported from QMK
+#define QMK_TT 145
+#define QMK_SFT_TT 105
+
+// ported from urob's ZMK config
+#define TT_UROB 280
+#define QTT_UROB 175
+#define REQ_P_IDLE_UROB 150
+
 / {
     behaviors {
+        /* TAP HOLDS BEGIN */
+       // in use
         lt: layer_tap { // this overrides the built-in layer-tap configuration https://zmk.dev/docs/keymaps/behaviors/hold-tap#custom-hold-tap-examples
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <145>;
-            quick-tap-ms = <220>;
+            flavor = "tap-preferred"; // TODO try "balanced"
+            tapping-term-ms = <QMK_TT>;
+            quick-tap-ms = <QUICK_TT>;
             bindings = <&mo>, <&kp>;
         };
 
+        // used by MEH and HYPR tap-holds
         // TODO would ht and st work better with hold-trigger-key-positions?
         ht: hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-//            flavor = "balanced"; // FIXME if I go back to this for HRM, I changed this from balanced
-            flavor = "tap-preferred";
-            tapping-term-ms = <145>;
-            quick-tap-ms = <220>;
+            flavor = "balanced";
+            tapping-term-ms = <TT_UROB>;
+//            flavor = "tap-preferred"; // FIXME if I go back to this for HRM, I changed this from balanced
+//            tapping-term-ms = <QMK_TT>;
+            quick-tap-ms = <QUICK_TT>;
 //            require-prior-idle-ms = <125>;
             bindings = <&kp>, <&kp>;
         };
+        /* not in use
         st: shift_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <105>;
-            quick-tap-ms = <220>;
+            tapping-term-ms = <QMK_SFT_TT>;
+            quick-tap-ms = <QUICK_TT>;
             bindings = <&kp>, <&kp>;
         };
-        hrml: home_row_mods_left_hand {
+        */
+
+        hrml: home_row_mods_left_hand { // based on urob's settings
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <280>;
-//            tapping-term-ms = <145>;
-            quick-tap-ms = <175>;
-//            require-prior-idle-ms = <150>;
+            tapping-term-ms = <TT_UROB>;
+//            tapping-term-ms = <QMK_TT>;
+            quick-tap-ms = <QTT_UROB>;
+//            require-prior-idle-ms = <REQ_P_IDLE_UROB >;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
-            hold-trigger-on-release;
+            hold-trigger-on-release; // recommended for use with HRM https://zmk.dev/docs/keymaps/behaviors/hold-tap#positional-hold-tap-and-hold-trigger-key-positions
         };
-        hrmr: home_row_mods_right_hand {
+        hrmr: home_row_mods_right_hand { // based on urob's settings
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <280>;
-//            tapping-term-ms = <145>;
-            quick-tap-ms = <175>;
-//            require-prior-idle-ms = <150>;
+            tapping-term-ms = <TT_UROB>;
+//            tapping-term-ms = <QMK_TT>;
+            quick-tap-ms = <QTT_UROB>;
+//            require-prior-idle-ms = <REQ_P_IDLE_UROB >;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
-            hold-trigger-on-release;
+            hold-trigger-on-release; // recommended for use with HRM https://zmk.dev/docs/keymaps/behaviors/hold-tap#positional-hold-tap-and-hold-trigger-key-positions
         };
 
+        /* replaced by urob's settings above
         sftl: home_row_mod_shift_left_hand {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <280>;
-//            tapping-term-ms = <105>;
-            quick-tap-ms = <175>;
-//            require-prior-idle-ms = <150>;
+            tapping-term-ms = <TT_UROB>;
+//            tapping-term-ms = <QMK_SFT_TT>;
+            quick-tap-ms = <QTT_UROB>;
+//            require-prior-idle-ms = <REQ_P_IDLE_UROB >;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;
@@ -70,24 +89,19 @@
             #binding-cells = <2>;
 //            flavor = "tap-preferred";
             flavor = "tap-preferred";
-            tapping-term-ms = <280>;
-//            tapping-term-ms = <105>;
-            quick-tap-ms = <175>;
-//            require-prior-idle-ms = <150>;
+            tapping-term-ms = <TT_UROB>;
+//            tapping-term-ms = <QMK_SFT_TT>;
+            quick-tap-ms = <QTT_UROB>;
+//            require-prior-idle-ms = <REQ_P_IDLE_UROB >;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;
         };
+        */
+        /* TAP HOLDS END */
 
-        mt: mod_tap { // TODO remove this if it's not in use.
-            #binding-cells = <2>;
-            tapping-term-ms = <145>;
-            quick-tap-ms = <220>;
-            require-prior-idle-ms = <125>;
-            bindings = <&kp>, <&kp>;
-        };
 
-        /* mod-morphs begin */
+        /* MOD-MORPHS BEGIN */
         z_esc: z_to_esc {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -130,7 +144,8 @@
             bindings = <&kp DOT>, <&kp RPAR>;
             mods = <(MOD_LCTL)>;
         };
-        /** numpad morphs begin **/
+
+        /** NUMPAD MORPHS BEGIN **/
         grv_slsh: grave_to_slash {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -173,8 +188,8 @@
             bindings = <&kp BSLH>, <&kp RETURN>;
             mods = <(MOD_LCTL)>;
         };
-        /** numpad morphs end **/
-        /* mod-morphs end */
+        /** NUMPAD MORPHS END **/
+        /* MOD-MORPHS END */
 
         leader: leader {
             compatible = "zmk,behavior-leader-key";
