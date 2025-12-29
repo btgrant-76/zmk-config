@@ -270,20 +270,19 @@
             compatible = "zmk,combos";
             combo_fun_layer {
                 timeout-ms = <50>;
-                key-positions = <30 31>;
+                key-positions = <FUN_LAYER_COMBO_POS>;
                 bindings = <&mo 4>;
                 layers = <0>;
             };
             combo_sym_layer {
                 timeout-ms = <50>;
-                // key-positions = <33 34>; // jlwffre
-                key-positions = <32 33>; // STM Chiffre
+                key-positions = <MED_LAYER_COMBO_POS>; // jlwffre
+//                key-positions = <32 33>; // STM Chiffre
                 bindings = <&mo 1>;
                 layers = <0>;
             };
         };
     };
-
 
     macros {
         up_dir: up_dir {
