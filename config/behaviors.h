@@ -162,6 +162,12 @@
             bindings = <&kp DOT>, <&kp RPAR>;
             mods = <(MOD_LCTL)>;
         };
+        qot_smi: quote_to_semicolon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SQT>, <&kp SEMI>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
 
         /** NUMPAD MORPHS BEGIN **/
         grv_slsh: grave_to_slash {
