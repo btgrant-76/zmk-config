@@ -41,7 +41,7 @@
             display-name = "Base";
             bindings = <
             &kp Q    &kp W  &kp E      &kp R       &kp T        &kp Y           &kp U        &kp I      &kp O      &kp P
-            HRML(A,  S,     D,         F)          &kp G        &kp H           HRMR(J,      K,         L,         qot_smi /*SQT*/)
+            HRML(A,  S,     D,         F)          &kp G        &kp H           HRMR(J,      K,         L,         SQT)
             &z_esc   &kp X  &kp C      &kp V       B_MEH        N_MEH           &kp M        &cma_lprn  &dot_rprn  &sls_ent
                             &lt 4 TAB  &lt 2 BSPC  &lt 5 ESC    &lt 5 RETURN    &lt 3 SPACE  &lt 1 DEL
             >;
@@ -100,10 +100,10 @@
         add { // 6
             display-name = "Additional Features";
             bindings = <
-            &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none       REDO_  PASTE_  COPY_  CUT_   UNDO_
-            &none       &none         &none         &none         &none       &none  &none   &none  &none  &none
-            &none       &none         &none         &none         &bootloader &none  &none   &none  &none  &none
-                                      &none         &none         &none       &none  &none   &none
+            &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none         REDO_  PASTE_  COPY_  CUT_   UNDO_
+            &none       &none         &none         &none         &none         &none  &none   &none  &none  &none
+            &none       &none         &none         &none         &bootloader   &none  &none   &none  &none  &none
+                                      &none         &none         &none         &none  &none   &none
             >;
         };
     };
