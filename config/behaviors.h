@@ -165,7 +165,7 @@
         qot_smi: quote_to_semicolon {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp SQT>, <&kp SEMI>;
+            bindings = <&hrmr RCTRL SQT>, <&kp SEMI>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 

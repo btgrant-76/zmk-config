@@ -41,7 +41,7 @@
             display-name = "Base";
             bindings = <
             &kp Q    &kp W  &kp E      &kp R       &kp T        &kp Y           &kp U        &kp I      &kp O      &kp P
-            HRML(A,  S,     D,         F)          &kp G        &kp H           HRMR(J,      K,         L,         SQT)
+            HRML(A,  S,     D,         F)          &kp G        &kp H           HRMR3(J,      K,         L) &qot_smi
             &z_esc   &kp X  &kp C      &kp V       B_MEH        N_MEH           &kp M        &cma_lprn  &dot_rprn  &sls_ent
                             &lt 4 TAB  &lt 2 BSPC  &lt 5 ESC    &lt 5 RETURN    &lt 3 SPACE  &lt 1 DEL
             >;
