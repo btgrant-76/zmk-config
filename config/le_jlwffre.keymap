@@ -67,10 +67,10 @@
         nav { // 3
             display-name = "Navigation";
             bindings = <
-            TAB_LFT   BACK      FWD      TAB_RGT     &up_dir            REDO_     PASTE_     COPY_     CUT_      UNDO_
-            &kp LCTRL &kp LALT  &kp LGUI &kp LSHFT   &kp CAPS           &kp LEFT  &kp DOWN   &kp UP    &kp RIGHT &kp SEMI
-            &none     &none     &none    &key_repeat &none              &kp HOME  &kp PG_DN  &kp PG_UP &kp END   &kp RETURN
-                                         &none       &kp N    MISS_CTL  &none     &none                        /*MISS_CTL*/
+            TAB_LFT    BACK       FWD       TAB_RGT      &up_dir            REDO_     PASTE_     COPY_      CUT_       UNDO_
+            &kp LCTRL  &kp LALT   &kp LGUI  &kp LSHFT    &kp CAPS           &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp SEMI
+            &none      &none      &none     &key_repeat  &none              &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &kp RETURN
+                                            &none        &kp N    MISS_CTL  &none     &none                          /*MISS_CTL*/
             >;
             sensor-bindings = <&inc_dec_kp LG(RBKT) LG(LBKT)>;
         };
@@ -78,10 +78,10 @@
         fun { // 4
             display-name = "Function";
             bindings = <
-            &log_out  &none    &scrn2clp &scrn2fl  &none                &none      &kp F7     &kp F8     &kp F9     &kp F12
-            &kp LCTRL &kp LALT &kp LGUI  &kp LSHFT &kp C_BRI_UP         &none      &kp F4     &kp F5     &kp F6     &kp F11
-            &none     &none    &none     &none     &kp C_BRI_DN         &none      &kp F1     &kp F2     &kp F3     &kp F10
-                                         &none     &mo 5        &trans  &mo 6      &none                          /*&trans*/
+            &log_out   &none     &scrn2clp  &scrn2fl   &none                 &none  &kp F7  &kp F8  &kp F9  &kp F12
+            &kp LCTRL  &kp LALT  &kp LGUI   &kp LSHFT  &kp C_BRI_UP          &none  &kp F4  &kp F5  &kp F6  &kp F11
+            &none      &none     &none      &none      &kp C_BRI_DN          &none  &kp F1  &kp F2  &kp F3  &kp F10
+                                            &none      &mo 5         &trans  &mo 6  &none                 /*&trans*/
             >;
             sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN>;
         };
@@ -89,10 +89,10 @@
         mse { // 5
             display-name = "Mouse Keys";
             bindings = <
-            UNDO_    CUT_      COPY_    PASTE_   REDO_                 &none          &none          &none        &none           &none
-            &mkp MB5 &mkp MB3  &mkp MB1 &mkp MB2 &none                 &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none
-            &kp ESC  &kp LCTRL &kp LALT &kp LGUI &kp LSHFT             &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none
-                                        &none    &none     MISS_CTL    &none          &none                                     /*MISS_CTL*/
+            UNDO_     CUT_       COPY_     PASTE_    REDO_                 &none           &none           &none         &none            &none
+            &mkp MB5  &mkp MB3   &mkp MB1  &mkp MB2  &none                 &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none
+            &kp ESC   &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT             &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none
+                                           &none     &none      MISS_CTL   &none           &none                                     /*MISS_CTL*/
             >;
             sensor-bindings = <&inc_dec_kp LC(LEFT) LC(RIGHT)>;
         };
