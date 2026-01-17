@@ -2,25 +2,51 @@
 
 ## Builds
 
+### Corne
+
+#### Left side
+
+```shell
+# Corne left ZMK 0.3
+west build -b "nice_nano_v2" \
+    -d ./build/typeractive-corne-left  -- \
+    -DZMK_CONFIG=/Users/brian.grant/projects/personal/zmk-firmware/zmk-config/config/ \
+    -DSHIELD="corne_left" \
+    -DZMK_EXTRA_MODULES="/Users/brian.grant/projects/personal/zmk-firmware/zmk-modules/zmk-leader-key/"
+```
+
+#### Right side
+
+```shell
+# Corne right ZMK 0.3
+west build -b "nice_nano_v2" \
+    -d ./build/typeractive-corne-right  -- \
+    -DZMK_CONFIG=/Users/brian.grant/projects/personal/zmk-firmware/zmk-config/config/ \
+    -DSHIELD="corne_right" \
+    -DZMK_EXTRA_MODULES="/Users/brian.grant/projects/personal/zmk-firmware/zmk-modules/zmk-leader-key/"
+```
+
 ### Le Chiffre STM32
 
 ```shell
-west build -p -b le_chiffre_stm32 \
+# Chiffre ZMK 0.3 \
+west build -b le_chiffre_stm32 \
     -d ./build/le-chiffre-stm32 -- \
-    -DZMK_CONFIG=/Users/brian.grant/projects/personal/zmk-firmware/zmk-configs/le-chiffre-stm32-zmk-config/config/ \
+    -DZMK_CONFIG=/Users/brian.grant/projects/personal/zmk-firmware/zmk-config/config/ \
     -DZMK_EXTRA_MODULES="/Users/brian.grant/projects/personal/zmk-firmware/zmk-modules/zmk-leader-key/;/Users/brian.grant/projects/personal/zmk-firmware/zmk-configs/le-chiffre-stm32-zmk-config"
     
-
 west flash -d ./build/le-chiffre-stm32
 ```
 
 ### Le Jlwffre
 
 ```shell
-west build -p -b le_jlwffre \
+# le jlwffre ZMK 0.3
+west build -b le_jlwffre \
+    -p \
     -d ./build/le-jlwffre -- \
-    -DZMK_CONFIG=/Users/brian.grant/projects/personal/zmk-firmware/zmk-configs/jlw-zmk-config/config \
-    -DZMK_EXTRA_MODULES="/Users/brian.grant/projects/personal/zmk-firmware/zmk-modules/zmk-config-jlw/;/Users/brian.grant/projects/personal/zmk-firmware/zmk-modules/zmk-leader-key/"
+    -DZMK_CONFIG=/Users/brian.grant/projects/personal/zmk-firmware/zmk-config/config/ \
+    -DZMK_EXTRA_MODULES="/Users/brian.grant/projects/personal/zmk-firmware/zmk-modules/zmk-config-jlw/;/Users/brian.grant/projects/personal/zmk-firmware/zmk-modules/zmk-leader-key/
 ```
 
 ## TODOs
@@ -31,11 +57,7 @@ west build -p -b le_jlwffre \
   - look into this option:  https://zmk.dev/docs/keymaps/behaviors/sensor-rotate#variable-sensor-rotation
 - [ ] mouse emu isn't going to work on STM at all. Remove this and move base references to fun and med instead?
 - [ ] re:  mse layer SCRL_* keys: try out other options for scrolling
-- [ ] can values like `quick-tap-ms = <220>;` be consolidated somewhere? 
-    - can it be `#define QUICK_TAP_MS 220` and then `quick-tap-ms = <QUICK_TAP_MS>;`?
 - [ ] use this approach to rename layers:  [Layer Behaviors](https://zmk.dev/docs/keymaps/behaviors/layers#defines-to-refer-to-layers)
-- [ ] I shouldn't have to [change the `status` fields in `le_chiffre_stm32.dts` in order to enable the encoder](https://github.com/petejohanson/le-chiffre-stm32-zmk-config/commit/ef42fbbdff2ecf1a71faac5307f86ff84200190d). What't the correct way to do this from the keymap/config side?
-  - I could try to *disable* the encoder from within the `.keymap` file to see if that works. That might help me to identify if I'm putting the override in the right place.
 - [ ] does the encoder on the STM Chiffre actuate in the same way as on the jlwffre and other QMK boards?
 - [ ] look at the mouse emulation docs re:  different acceleration profiles
 
@@ -129,3 +151,7 @@ sensors: sensors {
 triggers-per-rotation = <15>;
 };
 ```
+- [x] can values like `quick-tap-ms = <220>;` be consolidated somewhere?
+    - can it be `#define QUICK_TAP_MS 220` and then `quick-tap-ms = <QUICK_TAP_MS>;`?
+- [x] I shouldn't have to [change the `status` fields in `le_chiffre_stm32.dts` in order to enable the encoder](https://github.com/petejohanson/le-chiffre-stm32-zmk-config/commit/ef42fbbdff2ecf1a71faac5307f86ff84200190d). What't the correct way to do this from the keymap/config side?
+    - I could try to *disable* the encoder from within the `.keymap` file to see if that works. That might help me to identify if I'm putting the override in the right place.
