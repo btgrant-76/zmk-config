@@ -21,26 +21,12 @@
             quick-tap-ms = <QTT_UROB>;
             bindings = <&mo>, <&kp>;
         };
-
-        // used by MEH and HYPR tap-holds
-        // TODO would ht work better with hold-trigger-key-positions?
-        ht: hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <TT_UROB>;
-//            flavor = "tap-preferred"; // FIXME if I go back to this for HRM, I changed this from balanced
-//            tapping-term-ms = <QMK_TT>;
-            quick-tap-ms = <QUICK_TT>;
-//            require-prior-idle-ms = <125>;
-            bindings = <&kp>, <&kp>;
-        };
         htl: hold_tap_left_hand {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <TT_UROB>;
-            quick-tap-ms = <QUICK_TT>;
+            quick-tap-ms = <QTT_UROB>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
         };
@@ -49,29 +35,16 @@
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <TT_UROB>;
-            quick-tap-ms = <QUICK_TT>;
+            quick-tap-ms = <QTT_UROB>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
         };
-        /* not in use
-        st: shift_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <QMK_SFT_TT>;
-            quick-tap-ms = <QUICK_TT>;
-            bindings = <&kp>, <&kp>;
-        };
-        */
-
         hrml: home_row_mods_left_hand { // based on urob's settings
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <TT_UROB>;
-//            tapping-term-ms = <QMK_TT>;
             quick-tap-ms = <QTT_UROB>;
-//            require-prior-idle-ms = <REQ_P_IDLE_UROB >;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release; // recommended for use with HRM https://zmk.dev/docs/keymaps/behaviors/hold-tap#positional-hold-tap-and-hold-trigger-key-positions
@@ -81,43 +54,12 @@
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <TT_UROB>;
-//            tapping-term-ms = <QMK_TT>;
             quick-tap-ms = <QTT_UROB>;
-//            require-prior-idle-ms = <REQ_P_IDLE_UROB >;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release; // recommended for use with HRM https://zmk.dev/docs/keymaps/behaviors/hold-tap#positional-hold-tap-and-hold-trigger-key-positions
         };
-
-        /* replaced by urob's settings above
-        sftl: home_row_mod_shift_left_hand {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <TT_UROB>;
-//            tapping-term-ms = <QMK_SFT_TT>;
-            quick-tap-ms = <QTT_UROB>;
-//            require-prior-idle-ms = <REQ_P_IDLE_UROB >;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_R THUMBS>;
-            hold-trigger-on-release;
-        };
-        sftr: home_row_mod_shift_right_hand {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-//            flavor = "tap-preferred";
-            flavor = "tap-preferred";
-            tapping-term-ms = <TT_UROB>;
-//            tapping-term-ms = <QMK_SFT_TT>;
-            quick-tap-ms = <QTT_UROB>;
-//            require-prior-idle-ms = <REQ_P_IDLE_UROB >;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_L THUMBS>;
-            hold-trigger-on-release;
-        };
-        */
         /* TAP HOLDS END */
-
 
         /* MOD-MORPHS BEGIN */
         z_esc: z_to_esc {
