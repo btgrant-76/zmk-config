@@ -17,6 +17,7 @@
 #define FUN_LAYER_COMBO_POS 30 31
 #define MED_LAYER_COMBO_POS 32 33
 #include "behaviors.h" // definition of KEYS_L, KEYS_R, THUMBS must come before behaviors
+#include "layers.h"
 
 /* STM-only overrides begin */
 / {
@@ -50,10 +51,15 @@
         base {
             display-name = "Base";
             bindings = <
-            &kp Q      &kp W      &kp E      &kp R     &kp T                   &kp Y      &kp U      &kp I      &kp O     &kp P
-            HRML(A,    S,         D,         F)        &kp G                   &kp H      HRMR3(J,   K,         L)        &qot_smi
-            &z_esc     &kp X      &kp C      &kp V     B_MEH                   N_MEH      &kp M      &cma_lprn &dot_rprn  &sls_ent
-                                       &lt 5 TAB  &lt 2 BSPC  /*&kp C_MUTE*/   &lt 3 SPACE &lt 5 DEL                      &kp C_MUTE
+            BASE_1_RIGHT BASE_1_LEFT
+            BASE_2_RIGHT BASE_2_LEFT
+            BASE_3_RIGHT BASE_3_LEFT
+            BASE_2_THUMB_RIGHT BASE_2_THUMB_LEFT &kp C_MUTE
+
+//            &kp Q      &kp W      &kp E      &kp R     &kp T                   &kp Y      &kp U      &kp I      &kp O     &kp P
+//            HRML(A,    S,         D,         F)        &kp G                   &kp H      HRMR3(J,   K,         L)        &qot_smi
+//            &z_esc     &kp X      &kp C      &kp V     B_MEH                   N_MEH      &kp M      &cma_lprn &dot_rprn  &sls_ent
+//                                       &lt 5 TAB  &lt 2 BSPC  /*&kp C_MUTE*/   &lt 3 SPACE &lt 5 DEL                      &kp C_MUTE
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
