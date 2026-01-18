@@ -35,10 +35,10 @@
         base {
             display-name = "Base";
             bindings = <
-                BASE_1_RIGHT                        BASE_1_LEFT
-                BASE_2_RIGHT                        BASE_2_LEFT
-                BASE_3_RIGHT                        BASE_3_LEFT
-                BASE_2_THUMB_RIGHT &kp C_MUTE BASE_2_THUMB_LEFT
+                BASE_1_RIGHT                        BASE_1_RGHT
+                BASE_2_RIGHT                        BASE_2_RGHT
+                BASE_3_RIGHT                        BASE_3_RGHT
+                BASE_2_THUMB_RIGHT &kp C_MUTE BASE_2_THUMB_RGHT
 
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -47,10 +47,10 @@
         med { // 1
             display-name = "Media";
             bindings = <
-                MED_1_RIGHT                      MED_1_LEFT
-                MED_2_RIGHT                      MED_2_LEFT
-                MED_3_RIGHT                      MED_3_LEFT
-                MED_2_THUMB_RIGHT &kp C_PP MED_2_THUMB_LEFT
+                MED_1_RIGHT                      MED_1_RGHT
+                MED_2_RIGHT                      MED_2_RGHT
+                MED_3_RIGHT                      MED_3_RGHT
+                MED_2_THUMB_RIGHT &kp C_PP MED_2_THUMB_RGHT
             >;
             sensor-bindings = <&inc_dec_kp C_NEXT C_PREV>;
         };
@@ -58,10 +58,10 @@
         num { // 2
             display-name = "Number";
             bindings = <
-                NUM_1_RIGHT                      NUM_1_LEFT
-                NUM_2_RIGHT                      NUM_2_LEFT
-                NUM_3_RIGHT                      NUM_3_LEFT
-                NUM_2_THUMB_RIGHT &kp HOME NUM_2_THUMB_LEFT
+                NUM_1_RIGHT                      NUM_1_RGHT
+                NUM_2_RIGHT                      NUM_2_RGHT
+                NUM_3_RIGHT                      NUM_3_RGHT
+                NUM_2_THUMB_RIGHT &kp HOME NUM_2_THUMB_RGHT
 
             >;
             sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
@@ -70,10 +70,10 @@
         nav { // 3
             display-name = "Navigation";
             bindings = <
-                NAV_1_RIGHT                      NAV_1_LEFT
-                NAV_2_RIGHT                      NAV_2_LEFT
-                NAV_3_RIGHT                      NAV_3_LEFT
-                NAV_2_THUMB_RIGHT MISS_CTL NAV_2_THUMB_LEFT
+                NAV_1_RIGHT                      NAV_1_RGHT
+                NAV_2_RIGHT                      NAV_2_RGHT
+                NAV_3_RIGHT                      NAV_3_RGHT
+                NAV_2_THUMB_RIGHT MISS_CTL NAV_2_THUMB_RGHT
             >;
             sensor-bindings = <&inc_dec_kp LG(RBKT) LG(LBKT)>;
         };
@@ -81,10 +81,10 @@
         fun { // 4
             display-name = "Function";
             bindings = <
-                FUN_1_RIGHT                    FUN_1_LEFT
-                FUN_2_RIGHT                    FUN_2_LEFT
-                FUN_3_RIGHT                    FUN_3_LEFT
-                FUN_2_THUMB_RIGHT &trans FUN_2_THUMB_LEFT
+                FUN_1_RIGHT                    FUN_1_RGHT
+                FUN_2_RIGHT                    FUN_2_RGHT
+                FUN_3_RIGHT                    FUN_3_RGHT
+                FUN_2_THUMB_RIGHT &trans FUN_2_THUMB_RGHT
 
             >;
             sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN>;
@@ -93,10 +93,10 @@
         mse { // 5
             display-name = "Mouse Keys";
             bindings = <
-                MSE_1_RIGHT                      MSE_1_LEFT
-                MSE_2_RIGHT                      MSE_2_LEFT
-                MSE_3_RIGHT                      MSE_3_LEFT
-                MSE_2_THUMB_RIGHT MISS_CTL MSE_2_THUMB_LEFT
+                MSE_1_RIGHT                      MSE_1_RGHT
+                MSE_2_RIGHT                      MSE_2_RGHT
+                MSE_3_RIGHT                      MSE_3_RGHT
+                MSE_2_THUMB_RIGHT MISS_CTL MSE_2_THUMB_RGHT
 
             >;
             sensor-bindings = <&inc_dec_kp LC(LEFT) LC(RIGHT)>;
@@ -105,10 +105,10 @@
         add { // 6
             display-name = "Additional Features";
             bindings = <
-                ADD_1_RIGHT                         ADD_1_LEFT
-                ADD_2_RIGHT                         ADD_2_LEFT
-                ADD_3_RIGHT                         ADD_3_LEFT
-                ADD_2_THUMB_RIGHT &bootloader ADD_2_THUMB_LEFT
+                ADD_1_RIGHT                         ADD_1_RGHT
+                ADD_2_RIGHT                         ADD_2_RGHT
+                ADD_3_RIGHT                         ADD_3_RGHT
+                ADD_2_THUMB_RIGHT &bootloader ADD_2_THUMB_RGHT
 
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>; // normally RGB but not on this board
