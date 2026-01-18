@@ -1,18 +1,18 @@
-#define BASE_1_RIGHT       &kp Q  &kp W  &kp E  &kp R  &kp T
-#define BASE_1_LEFT        &kp Y  &kp U  &kp I  &kp O  &kp P
-#define BASE_2_RIGHT       HRML(A,    S,         D,         F)        &kp G
-#define BASE_2_LEFT        &kp H      HRMR3(J,   K,         L)        &qot_smi
-#define BASE_3_RIGHT       &z_esc     &kp X      &kp C      &kp V     B_MEH
-#define BASE_3_LEFT        N_MEH      &kp M      &cma_lprn &dot_rprn  &sls_ent
-#define BASE_2_THUMB_RIGHT &lt 5 TAB  &lt 2 BSPC
-#define BASE_2_THUMB_LEFT  &lt 3 SPACE &lt 5 DEL
+#define BASE_1_RIGHT       &kp Q   &kp W    &kp E  &kp R  &kp T
+#define BASE_1_LEFT        &kp Y   &kp U    &kp I  &kp O  &kp P
+#define BASE_2_RIGHT       HRML(A, S,       D,         F)        &kp G
+#define BASE_2_LEFT        &kp H   HRMR3(J, K,         L)        &qot_smi
+#define BASE_3_RIGHT       &z_esc  &kp X    &kp C      &kp V     B_MEH
+#define BASE_3_LEFT        N_MEH   &kp M    &cma_lprn  &dot_rprn  &sls_ent
+#define BASE_2_THUMB_RIGHT &lt 5   TAB      &lt 2 BSPC
+#define BASE_2_THUMB_LEFT  &lt 3   SPACE    &lt 5 DEL
 
 #define MED_1_RIGHT        &none      &none        &none        &none      &none
-#define MED_1_LEFT         &none    &none      &none      &none      &none
-#define MED_2_RIGHT        &kp C_EV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &none
-#define MED_2_LEFT         &none    &none      &none      &none      &none
-#define MED_3_RIGHT        &none    &none        &none        &none      &none
-#define MED_3_LEFT         &none    &none      &none      &none      &none
+#define MED_1_LEFT         &none      &none        &none        &none      &none
+#define MED_2_RIGHT        &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &none
+#define MED_2_LEFT         &none      &none        &none        &none      &none
+#define MED_3_RIGHT        &none      &none        &none        &none      &none
+#define MED_3_LEFT         &none      &none        &none        &none      &none
 
 #define MED_2_THUMB_RIGHT  &kp C_MUTE &kp C_PP
 #define MED_2_THUMB_LEFT   &none      &none
@@ -59,15 +59,15 @@
 //#define FUN_3_THUMB_RIGHT
 //#define FUN_3_THUMB_LEFT
 
-#define MSE_1_RIGHT        UNDO_    CUT_      COPY_     PASTE_    REDO_
-#define MSE_1_LEFT         &none         &none          &none        &none           &none
-#define MSE_2_RIGHT        &mkp MB &mkp MB3  &mkp MB1  &mkp MB2  &none
-#define MSE_2_LEFT         &mmv MOE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none
-#define MSE_3_RIGHT        &kp ESC &kp LCTRL &kp LALT  &kp LGUI  &kp LSHFT
-#define MSE_3_LEFT         &msc SCL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none
+#define MSE_1_RIGHT        UNDO_     CUT_      COPY_     PASTE_    REDO_      &none
+#define MSE_1_LEFT         &none           &none         &none            &none
+#define MSE_2_RIGHT        &mkp MB5  &mkp MB3  &mkp MB1  &mkp MB2  &none
+#define MSE_2_LEFT         &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none
+#define MSE_3_RIGHT        &kp ESC   &kp LCTRL &kp LALT  &kp LGUI  &kp LSHFT
+#define MSE_3_LEFT         &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none
 
-#define MSE_2_THUMB_RIGHT  &none     &none
-#define MSE_2_THUMB_LEFT   &none          &none
+#define MSE_2_THUMB_RIGHT  &none  &none
+#define MSE_2_THUMB_LEFT   &none  &none
 
 //#define MSE_3_THUMB_RIGHT
 //#define MSE_3_THUMB_LEFT
