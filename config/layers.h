@@ -4,8 +4,12 @@
 #define BASE_2_LEFT        &kp H   HRMR3(J, K,         L)        &qot_smi
 #define BASE_3_RIGHT       &z_esc  &kp X    &kp C      &kp V     B_MEH
 #define BASE_3_LEFT        N_MEH   &kp M    &cma_lprn  &dot_rprn  &sls_ent
+
 #define BASE_2_THUMB_RIGHT &lt 5   TAB      &lt 2 BSPC
 #define BASE_2_THUMB_LEFT  &lt 3   SPACE    &lt 5 DEL
+
+#define BASE_3_THUMB_RIGHT &lt 4 TAB  &lt 2 BSPC  &lt 5 ESC
+#define BASE_3_THUMB_LEFT  &lt 5 RETURN    &lt 3 SPACE  &lt 1 DEL
 
 #define MED_1_RIGHT        &none      &none        &none        &none      &none
 #define MED_1_LEFT         &none      &none        &none        &none      &none
@@ -17,8 +21,9 @@
 #define MED_2_THUMB_RIGHT  &kp C_MUTE &kp C_PP
 #define MED_2_THUMB_LEFT   &none      &none
 
-//#define MED_3_THUMB_RIGHT
-//#define MED_3_THUMB_LEFT
+#define MED_3_THUMB_RIGHT &kp C_MUTE    &kp C_PP    &none
+#define MED_3_THUMB_LEFT  &none  &none  &none
+
 
 #define NUM_1_RIGHT        UNDO_      CUT_       COPY_      PASTE_      REDO_
 #define NUM_1_LEFT         &lbkt_par    &kp N7   &kp N8     &kp N9     &rbkt_par
@@ -30,8 +35,9 @@
 #define NUM_2_THUMB_RIGHT  &kp BSPC    &trans
 #define NUM_2_THUMB_LEFT   &mins_space &zero_space
 
-//#define NUM_3_THUMB_RIGHT
-//#define NUM_3_THUMB_LEFT
+#define NUM_3_THUMB_RIGHT  &kp DEL   &none        &kp BSPC
+#define NUM_3_THUMB_LEFT   &mins_space   &zero_space  &kp DOT
+
 
 #define NAV_1_RIGHT        TAB_LFT   BACK     FWD      TAB_RGT     &up_dir
 #define NAV_1_LEFT         REDO_     PASTE_    COPY_     CUT_      UNDO_
@@ -43,8 +49,9 @@
 #define NAV_2_THUMB_RIGHT  &none       &kp N
 #define NAV_2_THUMB_LEFT   &none     &none
 
-//#define NAV_3_THUMB_RIGHT
-//#define NAV_3_THUMB_LEFT
+#define NAV_3_THUMB_RIGHT &none     &kp BSPC     &kp ENTER
+#define NAV_3_THUMB_LEFT &none     &none      &none
+
 
 #define FUN_1_RIGHT        &log_out  &none    &scrn2clp &scrn2fl  &none
 #define FUN_1_LEFT         &none    &kp F7    &kp F8    &kp F9    &kp F12
@@ -56,8 +63,9 @@
 #define FUN_2_THUMB_RIGHT  &none     &mo 5
 #define FUN_2_THUMB_LEFT   &mo 6      &none
 
-//#define FUN_3_THUMB_RIGHT
-//#define FUN_3_THUMB_LEFT
+#define FUN_3_THUMB_RIGHT  &none      &mo 5      &none
+#define FUN_3_THUMB_LEFT   &none  &mo 6   &none
+
 
 #define MSE_1_RIGHT        UNDO_     CUT_      COPY_     PASTE_    REDO_      &none
 #define MSE_1_LEFT         &none           &none         &none            &none
@@ -69,8 +77,9 @@
 #define MSE_2_THUMB_RIGHT  &none  &none
 #define MSE_2_THUMB_LEFT   &none  &none
 
-//#define MSE_3_THUMB_RIGHT
-//#define MSE_3_THUMB_LEFT
+#define MSE_3_THUMB_RIGHT  &kp ESC   &none     &none
+#define MSE_3_THUMB_LEFT   &none           &none           &none
+
 
 #define ADD_1_RIGHT        &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none
 #define ADD_1_LEFT         REDO_     PASTE_     COPY_      CUT_       UNDO_
@@ -82,5 +91,5 @@
 #define ADD_2_THUMB_RIGHT  &trans       &trans
 #define ADD_2_THUMB_LEFT   &trans       &trans
 
-//#define ADD_3_THUMB_RIGHT
-//#define ADD_3_THUMB_LEFT
+#define ADD_3_THUMB_RIGHT  &none         &none         &none
+#define ADD_3_THUMB_LEFT   &none  &none   &none

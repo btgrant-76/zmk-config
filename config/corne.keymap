@@ -17,6 +17,7 @@
 #define FUN_LAYER_COMBO_POS 31 32
 #define MED_LAYER_COMBO_POS 33 34
 #include "behaviors.h" // definition of KEYS_L, KEYS_R, THUMBS must come before behaviors
+#include "layers.h"
 
 / {
     chosen {
@@ -40,69 +41,74 @@
         base {
             display-name = "Base";
             bindings = <
-            &kp Q    &kp W  &kp E      &kp R       &kp T        &kp Y           &kp U        &kp I      &kp O      &kp P
-            HRML(A,  S,     D,         F)          &kp G        &kp H           HRMR3(J,      K,         L) &qot_smi
-            &z_esc   &kp X  &kp C      &kp V       B_MEH        N_MEH           &kp M        &cma_lprn  &dot_rprn  &sls_ent
-                            &lt 4 TAB  &lt 2 BSPC  &lt 5 ESC    &lt 5 RETURN    &lt 3 SPACE  &lt 1 DEL
+                BASE_1_RIGHT                 BASE_1_LEFT
+                BASE_2_RIGHT                 BASE_2_LEFT
+                BASE_3_RIGHT                 BASE_3_LEFT
+                BASE_3_THUMB_RIGHT     BASE_3_THUMB_LEFT
+//                            &lt 4 TAB  &lt 2 BSPC  &lt 5 ESC    &lt 5 RETURN    &lt 3 SPACE  &lt 1 DEL
             >;
         };
 
         med { // 1
             display-name = "Media";
             bindings = <
-            &none       &none         &none         &none       &none           &none  &none  &none  &none  &none
-            &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &none           &none  &none  &none  &none  &none
-            &none       &none         &none         &none       &none           &none  &none  &none  &none  &none
-                                      &kp C_MUTE    &kp C_PP    &none           &none  &none  &none
+                MED_1_RIGHT             MED_1_LEFT
+                MED_2_RIGHT             MED_2_LEFT
+                MED_3_RIGHT             MED_3_LEFT
+                MED_3_THUMB_RIGHT MED_3_THUMB_LEFT
+//                                      &kp C_MUTE    &kp C_PP    &none           &none  &none  &none
             >;
         };
 
         num { // 2
             display-name = "Number";
             bindings = <
-            UNDO_      CUT_      COPY_     PASTE_       REDO_                  &lbkt_par     &kp N7       &kp N8      &kp N9      &rbkt_par
-            &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT    &caps_word             &kp EQUAL     &kp N4       &kp N5      &kp N6      &semi_quot
-            &kp ESC    &none     &leader   &key_repeat  &none                  &bslsh_enter  &kp N1       &two_comma  &three_dot  &grv_slsh
-                                 &kp DEL   &none        &kp BSPC               &mins_space   &zero_space  &kp DOT
+                NUM_1_RIGHT             NUM_1_LEFT
+                NUM_2_RIGHT             NUM_2_LEFT
+                NUM_3_RIGHT             NUM_3_LEFT
+                NUM_3_THUMB_RIGHT NUM_3_THUMB_LEFT
+//                                 &kp DEL   &none        &kp BSPC               &mins_space   &zero_space  &kp DOT
             >;
         };
 
         nav { // 3
             display-name = "Navigation";
             bindings = <
-            TAB_LFT    BACK      FWD       TAB_RGT      &up_dir                REDO_     PASTE_     COPY_      CUT_       UNDO_
-            &kp LCTRL  &kp LALT  &kp LGUI  &kp LSHFT    &kp CAPS               &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp SEMI
-            &none      &none     &none     &key_repeat  &none                  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &kp RETURN
-                                 &none     &kp BSPC     &kp ENTER              &none     &none      &none
+                NAV_1_RIGHT             NAV_1_LEFT
+                NAV_2_RIGHT             NAV_2_LEFT
+                NAV_3_RIGHT             NAV_3_LEFT
+                NAV_3_THUMB_RIGHT NAV_3_THUMB_LEFT
+//                                 &none     &kp BSPC     &kp ENTER              &none     &none      &none
             >;
         };
 
         fun { // 4
             display-name = "Function";
             bindings = <
-            &log_out   &none     &scrn2clp  &scrn2fl   &none                   &none  &kp F7  &kp F8  &kp F9  &kp F12
-            &kp LCTRL  &kp LALT  &kp LGUI   &kp LSHFT  &kp C_BRI_UP            &none  &kp F4  &kp F5  &kp F6  &kp F11
-            &none      &none     &none      &none      &kp C_BRI_DN            &none  &kp F1  &kp F2  &kp F3  &kp F10
-                                 &none      &mo 5      &none                   &none  &mo 6   &none
+                FUN_1_RIGHT             FUN_1_LEFT
+                FUN_2_RIGHT             FUN_2_LEFT
+                FUN_3_RIGHT             FUN_3_LEFT
+//                                 &none      &mo 5      &none                   &none  &mo 6   &none
             >;
         };
 
         mse { // 5
             display-name = "Mouse Keys";
             bindings = <
-            UNDO_     CUT_      COPY_     PASTE_    REDO_                      &none           &none           &none         &none            &none
-            &mkp MB5  &mkp MB3  &mkp MB1  &mkp MB2  &none                      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none
-            &kp ESC   &kp LCTRL &kp LALT  &kp LGUI  &kp LSHFT                  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none
-                                &kp ESC   &none     &none                      &none           &none           &none
+                MSE_1_RIGHT             MSE_1_LEFT
+                MSE_2_RIGHT             MSE_2_LEFT
+                MSE_3_RIGHT             MSE_3_LEFT
+                MSE_3_THUMB_RIGHT MSE_3_THUMB_LEFT
+//                                &kp ESC   &none     &none                      &none           &none           &none
             >;
         };
 
         add { // 6
             display-name = "Additional Features";
             bindings = <
-            &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none         REDO_  PASTE_  COPY_  CUT_   UNDO_
-            &none       &none         &none         &none         &none         &none  &none   &none  &none  &none
-            &none       &none         &none         &none         &bootloader   &none  &none   &none  &none  &none
+                ADD_1_RIGHT             ADD_1_LEFT
+                ADD_2_RIGHT             ADD_2_LEFT
+                ADD_3_RIGHT             ADD_3_LEFT
                                       &none         &none         &none         &none  &none   &none
             >;
         };
