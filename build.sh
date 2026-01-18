@@ -51,12 +51,16 @@ case "$1" in
     ;;
 esac
 
-#echo "building $BOARD with config $CONFIG and modules $MODULES"
-#echo "$2"
+echo "running 'west build -b $BOARD \
+-d ./build/$BUILD_DIR \
+"$2" -- \
+-DZMK_CONFIG=$CONFIG \
+$SHIELD \
+-DZMK_EXTRA_MODULES=\"$MODULES\"'"
 
 west build -b $BOARD \
-    -d ./build/$BUILD_DIR \
-    "$2" -- \
-    -DZMK_CONFIG=$CONFIG \
-    $SHIELD \
-    -DZMK_EXTRA_MODULES=$MODULES
+-d ./build/$BUILD_DIR \
+"$2" -- \
+-DZMK_CONFIG=$CONFIG \
+$SHIELD \
+-DZMK_EXTRA_MODULES="$MODULES"
