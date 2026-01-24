@@ -32,6 +32,7 @@
 
 &sensors {
     status = "okay";
+    triggers-per-rotation = <9>;
 };
 /* STM-only overrides end */
 
