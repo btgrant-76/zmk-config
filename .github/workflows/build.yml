@@ -2,5 +2,4 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    # FIXME what's the mainline version of this?
-    uses: petejohanson/zmk/.github/workflows/build-user-config.yml@core/move-to-zephyr-4-1
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
