@@ -20,35 +20,31 @@ manifest:
     - name: zmk
       remote: petejohanson
       revision: core/move-to-zephyr-4-1
+      # remote: zmkfirmware
+      # revision: v0.3
       import: app/west.yml
-#    - name: zmk
-#      remote: zmkfirmware
-#      revision: v0.3
-#      import: app/west.yml
     - name: zmk-leader-key
       remote: urob
       revision: main
-#    - name: zmk-leader-key
-#      remote: urob
-#      revision: v0.3.0
-#    - name: zmk-config-jlw
-#      remote: jlw
-#      revision: main # this should get pinned to 0.3
+      # revision: v0.3.0
+    - name: zmk-config-jlw
+      remote: jlw
+      revision: main # this should get pinned to 0.3
     - name: le-chiffre-stm32-zmk-config
       remote: petejohanson
-      #      revision: main
+      # revision: main
       revision: zephyr-41-testing
-#    - name:  zmk-config-adeptble
-#      remote: btgrant-76
-#      revision: main # TODO tag this to v0.3
-#    - name: zmk-pmw3610-driver
-#      remote: badjeff
-#      revision: zmk-0.3
-#    - name: forager-zmk-module
-#      remote: carrefinho
-#      revision: zmk-v0.3 ## FIXME one of these was updated on main and needs to get back there
-#    - name: zmk-rgbled-widget
-#      remote: caksoylar
-#      revision: main
+    - name:  zmk-config-adeptble
+      remote: btgrant-76
+      revision: main # TODO tag this to v0.3
+    - name: zmk-pmw3610-driver
+      remote: badjeff
+      revision: zmk-0.3
+    - name: forager-zmk-module
+      remote: carrefinho
+      revision: zmk-v0.3
+    - name: zmk-rgbled-widget
+      remote: caksoylar
+      revision: main
   self:
     path: config
