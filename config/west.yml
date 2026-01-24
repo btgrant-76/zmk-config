@@ -18,12 +18,15 @@ manifest:
       url-base: https://github.com/caksoylar
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: v0.3
+#      remote: zmkfirmware
+#      revision: v0.3
+      remote: petejohanson
+      revision: core/move-to-zephyr-4-1
       import: app/west.yml
     - name: zmk-leader-key
       remote: urob
-      revision: v0.3.0
+#      revision: v0.3.0
+      revision: main
     - name: zmk-config-jlw
       remote: jlw
       revision: main # this should get pinned to 0.3
