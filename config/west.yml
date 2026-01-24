@@ -38,7 +38,7 @@ manifest:
       revision: zmk-0.3
     - name: forager-zmk-module
       remote: carrefinho
-      revision: main
+      revision: zmk-v0.3
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
