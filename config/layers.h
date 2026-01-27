@@ -67,12 +67,12 @@
 #define FUN_3_THUMB_RIGHT  &none     &mo 6     &none
 
 
-#define MSE_1_LEFT         UNDO_           CUT_            COPY_         PASTE_           REDO_
-#define MSE_1_RIGHT        &none           &none           &none         &none            &none
-#define MSE_2_LEFT         &mkp MB5        &mkp MB3        &mkp MB1      &mkp MB2         &none
-#define MSE_2_RIGHT        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none
-#define MSE_3_LEFT         &kp ESC         &kp LCTRL       &kp LALT      &kp LGUI         &kp LSHFT
-#define MSE_3_RIGHT        &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none
+#define MSE_1_LEFT         UNDO_           CUT_            COPY_           PASTE_           REDO_
+#define MSE_1_RIGHT        &none           &none           &none           &none            &none
+#define MSE_2_LEFT         &mkp MB5        &mkp MB3        &mkp MB1        &mkp MB2         &none
+#define MSE_2_RIGHT        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP    &mmv MOVE_RIGHT  &none
+#define MSE_3_LEFT         &kp ESC         &kp LCTRL       &kp LALT        &kp LGUI         &kp LSHFT
+#define MSE_3_RIGHT        &msc SCRL_LEFT  &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_RIGHT  &none
 
 #define MSE_2_THUMB_LEFT   &none           &none
 #define MSE_2_THUMB_RIGHT  &none           &none
