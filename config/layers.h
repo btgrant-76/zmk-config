@@ -29,7 +29,9 @@
 #define NUM_1_RIGHT        &lbkt_par     &kp N7    &kp N8      &kp N9       &rbkt_par
 #define NUM_2_LEFT         &kp LCTRL     &kp LALT  &kp LGUI    &kp LSHFT    &caps_word
 #define NUM_2_RIGHT        &kp EQUAL     &kp N4    &kp N5      &kp N6       &semi_quot
+
 #define NUM_3_LEFT         &kp ESC       &none     &leader     &key_repeat  &none
+
 #define NUM_3_RIGHT        &bslsh_enter  &kp N1    &two_comma  &three_dot   &grv_slsh
 
 #define NUM_2_THUMB_LEFT   &kp BSPC      &trans
