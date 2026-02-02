@@ -7,7 +7,6 @@ OPTIONS="chiffre jlwffre corne corne_left corne_right"
 #  exit 1
 #fi
 
-# TODO optional clean flag to add -p
 # TODO add the option to flash? really only useful for Le Chiffre STM
 
 CONFIG="/Users/brian.grant/projects/personal/zmk-firmware/zmk-config/config/"
