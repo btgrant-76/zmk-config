@@ -11,9 +11,9 @@
                    5 6 7 8 9 \
                    11 /* Save */ 15 16 17 18 19 \
                    25 26 27 28 29
-#define THUMBS 30 31      33 34
+#define THUMBS 30 31      32 33
 #define FUN_LAYER_COMBO_POS 30 31
-#define MED_LAYER_COMBO_POS 33 34
+#define MED_LAYER_COMBO_POS 32 33
 #include "behaviors.h" // definition of KEYS_L, KEYS_R, THUMBS must come before behaviors
 #include "layers.h"
 
