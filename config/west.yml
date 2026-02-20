@@ -9,7 +9,7 @@ manifest:
     - name: petejohanson
       url-base: https://github.com/petejohanson
     - name: btgrant-76
-      url-base:  https://github.com/btgrant-76
+      url-base: https://github.com/btgrant-76
     - name: badjeff
       url-base: https://github.com/badjeff
     - name: carrefinho
@@ -30,7 +30,7 @@ manifest:
     - name: le-chiffre-stm32-zmk-config
       remote: petejohanson
       revision: main
-    - name:  zmk-config-adeptble
+    - name: zmk-config-adeptble
       remote: btgrant-76
       revision: main # TODO tag this to v0.3
     - name: zmk-pmw3610-driver
@@ -41,6 +41,6 @@ manifest:
       revision: zmk-v0.3
     - name: zmk-rgbled-widget
       remote: caksoylar
-      revision: main
+      revision: v0.3.0
   self:
     path: config
