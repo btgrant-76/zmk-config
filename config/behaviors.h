@@ -226,6 +226,12 @@
 
         combos {
             compatible = "zmk,combos";
+            combo_sticky_shift {
+                timeout-ms = <50>;
+                key-positions = <STICKY_SHIFT_COMBO_POS>;
+                bindings = <&sk LSFT>;
+                layers = <0>;
+            };
             combo_fun_layer {
                 timeout-ms = <50>;
                 key-positions = <FUN_LAYER_COMBO_POS>;

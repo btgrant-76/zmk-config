@@ -20,6 +20,7 @@
 #define THUMBS 30 31      33 34 // jlwffre encoder is at 32
 #define FUN_LAYER_COMBO_POS 30 31
 #define MED_LAYER_COMBO_POS 33 34
+#define STICKY_SHIFT_COMBO_POS 13 16
 #include "behaviors.h" // definition of KEYS_L, KEYS_R, THUMBS must come before behaviors
 #include "layers.h"
 
