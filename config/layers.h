@@ -86,7 +86,7 @@
 
 #define ADD_1_LEFT         &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none
 #define ADD_1_RIGHT        REDO_       PASTE_        COPY_         CUT_          UNDO_
-#define ADD_2_LEFT         &none       &none         &none         &none         &none
+#define ADD_2_LEFT         &none       &none         &none         &none         &soft_off
 #define ADD_2_RIGHT        &none       &none         &none         &none         &none
 #define ADD_3_LEFT         &none       &none         &none         &none         &bootloader
 #define ADD_3_RIGHT        &none       &none         &none         &none         &none
