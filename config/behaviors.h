@@ -75,13 +75,13 @@
         z_esc: z_to_esc {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = /*<Z_HYPR>*/ <Z_SHIFT>, <&kp ESC>;
+            bindings = <Z_HYPR> /*<Z_SHIFT>*/, <&kp ESC>;
             mods = <(MOD_RCTL)>;
         };
         sls_ent: slash_to_enter {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <SLS_SHIFT>, <&kp RETURN>;
+            bindings = <SLS_HYPR> /*<SLS_SHIFT>*/, <&kp RETURN>;
             mods = <(MOD_LCTL)>;
         };
         cma_lbkt: comma_to_left_bracket { // this does not work :(
