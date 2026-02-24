@@ -75,13 +75,13 @@
         z_esc: z_to_esc {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <Z_HYPR>, <&kp ESC>;
+            bindings = /*<Z_HYPR>*/ <Z_SHIFT>, <&kp ESC>;
             mods = <(MOD_RCTL)>;
         };
         sls_ent: slash_to_enter {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <SLS_HYPR>, <&kp RETURN>;
+            bindings = <SLS_SHIFT>, <&kp RETURN>;
             mods = <(MOD_LCTL)>;
         };
         cma_lbkt: comma_to_left_bracket { // this does not work :(
@@ -226,12 +226,14 @@
 
         combos {
             compatible = "zmk,combos";
-            combo_sticky_shift {
-                timeout-ms = <50>;
-                key-positions = <STICKY_SHIFT_COMBO_POS>;
-                bindings = <&sk LSFT>;
-                layers = <0>;
-            };
+            #ifndef STM
+//            combo_sticky_shift {
+//                timeout-ms = <50>;
+//                key-positions = <STICKY_SHIFT_COMBO_POS>;
+//                bindings = <&sk LSFT>;
+//                layers = <0>;
+//            };
+            #endif
             combo_fun_layer {
                 timeout-ms = <50>;
                 key-positions = <FUN_LAYER_COMBO_POS>;
@@ -240,8 +242,7 @@
             };
             combo_sym_layer {
                 timeout-ms = <50>;
-                key-positions = <MED_LAYER_COMBO_POS>; // jlwffre
-//                key-positions = <32 33>; // STM Chiffre
+                key-positions = <MED_LAYER_COMBO_POS>;
                 bindings = <&mo 1>;
                 layers = <0>;
             };

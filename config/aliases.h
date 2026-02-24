@@ -9,7 +9,11 @@
 
 /* base */
 #define Z_HYPR &htl LC(LA(LG(LSHFT))) Z
+#define Z_SHIFT &htl LSHFT Z
+#define E_HYPR &htl LC(LA(LG(LSHFT))) E
 #define SLS_HYPR &htr LC(LA(LG(LSHFT))) FSLH
+#define SLS_SHIFT &htr LSHFT FSLH
+#define I_HYPR &htr LC(LA(LG(LSHFT))) I
 #define B_MEH &htl LC(LA(LSHFT)) B
 #define N_MEH &htr LC(LA(LSHFT)) N
 

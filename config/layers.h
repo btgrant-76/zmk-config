@@ -1,5 +1,5 @@
-#define BASE_1_LEFT        &kp Q         &kp W        &kp E      &kp R      &kp T
-#define BASE_1_RIGHT       &kp Y         &kp U        &kp I      &kp O      &kp P
+#define BASE_1_LEFT        &kp Q         &kp W        E_HYPR     &kp R      &kp T
+#define BASE_1_RIGHT       &kp Y         &kp U        I_HYPR     &kp O      &kp P
 #define BASE_2_LEFT        HRML(A,       S,           D,         F)         &kp G
 #define BASE_2_RIGHT       &kp H         HRMR3(J,     K,         L)         &qot_smi
 #define BASE_3_LEFT        &z_esc        &kp X        &kp C      &kp V      B_MEH
