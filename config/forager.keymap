@@ -57,7 +57,7 @@
                 NUM_1_LEFT              NUM_1_RIGHT
                 NUM_2_LEFT              NUM_2_RIGHT
                 NUM_3_LEFT              NUM_3_RIGHT
-                &trans &kp BSPC         &zero_space &mins_space
+                &trans &kp BSPC         &mins_space &zero_space
             >;
         };
 
