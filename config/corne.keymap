@@ -49,7 +49,7 @@
                 BASE_1_LEFT              BASE_1_RIGHT
                 BASE_2_LEFT              BASE_2_RIGHT
                 BASE_3_LEFT              BASE_3_RIGHT
-                BASE_3_THUMB_LEFT  BASE_3_THUMB_RIGHT
+                BASE_THUMB_LEFT_3  BASE_THUMB_RIGHT_3
             >;
         };
 
@@ -59,7 +59,7 @@
                 MED_1_LEFT              MED_1_RIGHT
                 MED_2_LEFT              MED_2_RIGHT
                 MED_3_LEFT              MED_3_RIGHT
-                MED_3_THUMB_LEFT  MED_3_THUMB_RIGHT
+                MED_THUMB_LEFT_3  MED_THUMB_RIGHT_3
             >;
         };
 
@@ -69,7 +69,7 @@
                 NUM_1_LEFT              NUM_1_RIGHT
                 NUM_2_LEFT              NUM_2_RIGHT
                 NUM_3_LEFT              NUM_3_RIGHT
-                NUM_3_THUMB_LEFT  NUM_3_THUMB_RIGHT
+                NUM_THUMB_LEFT_3  NUM_THUMB_RIGHT_3
             >;
         };
 
@@ -79,7 +79,7 @@
                 NAV_1_LEFT              NAV_1_RIGHT
                 NAV_2_LEFT              NAV_2_RIGHT
                 NAV_3_LEFT              NAV_3_RIGHT
-                NAV_3_THUMB_LEFT  NAV_3_THUMB_RIGHT
+                NAV_THUMB_LEFT_3  NAV_THUMB_RIGHT_3
             >;
         };
 
@@ -89,7 +89,7 @@
                 FUN_1_LEFT              FUN_1_RIGHT
                 FUN_2_LEFT              FUN_2_RIGHT
                 FUN_3_LEFT              FUN_3_RIGHT
-                FUN_3_THUMB_LEFT  FUN_3_THUMB_RIGHT
+                FUN_THUMB_LEFT_3  FUN_THUMB_RIGHT_3
             >;
         };
 
@@ -99,7 +99,7 @@
                 MSE_1_LEFT              MSE_1_RIGHT
                 MSE_2_LEFT              MSE_2_RIGHT
                 MSE_3_LEFT              MSE_3_RIGHT
-                MSE_3_THUMB_LEFT  MSE_3_THUMB_RIGHT
+                MSE_THUMB_LEFT_3  MSE_THUMB_RIGHT_3
             >;
         };
 
@@ -109,7 +109,7 @@
                 ADD_1_LEFT              ADD_1_RIGHT
                 ADD_2_LEFT              ADD_2_RIGHT
                 ADD_3_LEFT              ADD_3_RIGHT
-                ADD_3_THUMB_LEFT  ADD_3_THUMB_RIGHT
+                ADD_THUMB_LEFT_3  ADD_THUMB_RIGHT_3
             >;
         };
     };

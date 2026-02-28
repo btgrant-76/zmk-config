@@ -91,7 +91,6 @@
                 MSE_1_LEFT              MSE_1_RIGHT
                 MSE_2_LEFT              MSE_2_RIGHT
                 MSE_3_LEFT              MSE_3_RIGHT
-                MSE_2_THUMB_LEFT  MSE_2_THUMB_RIGHT
                 &none &none             &none &none
             >;
         };

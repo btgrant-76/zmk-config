@@ -43,7 +43,7 @@
                 BASE_1_LEFT                          BASE_1_RIGHT
                 BASE_2_LEFT                          BASE_2_RIGHT
                 BASE_3_LEFT                          BASE_3_RIGHT
-                BASE_2_THUMB_LEFT  &kp C_MUTE  BASE_2_THUMB_RIGHT
+                BASE_THUMB_LEFT_2  &kp C_MUTE  BASE_THUMB_RIGHT_2
 
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -55,7 +55,7 @@
                 MED_1_LEFT                        MED_1_RIGHT
                 MED_2_LEFT                        MED_2_RIGHT
                 MED_3_LEFT                        MED_3_RIGHT
-                MED_2_THUMB_LEFT  &kp C_PP  MED_2_THUMB_RIGHT
+                MED_THUMB_LEFT_2  &kp C_PP  MED_THUMB_RIGHT_2
             >;
             sensor-bindings = <&inc_dec_kp C_NEXT C_PREV>;
         };
@@ -66,7 +66,7 @@
                 NUM_1_LEFT                        NUM_1_RIGHT
                 NUM_2_LEFT                        NUM_2_RIGHT
                 NUM_3_LEFT                        NUM_3_RIGHT
-                NUM_2_THUMB_LEFT  &kp HOME  NUM_2_THUMB_RIGHT
+                NUM_THUMB_LEFT_2  &kp HOME  NUM_THUMB_RIGHT_2
 
             >;
             sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
@@ -78,7 +78,7 @@
                 NAV_1_LEFT                        NAV_1_RIGHT
                 NAV_2_LEFT                        NAV_2_RIGHT
                 NAV_3_LEFT                        NAV_3_RIGHT
-                NAV_2_THUMB_LEFT  MISS_CTL  NAV_2_THUMB_RIGHT
+                NAV_THUMB_LEFT_2  MISS_CTL  NAV_THUMB_RIGHT_2
             >;
             sensor-bindings = <&inc_dec_kp LG(RBKT) LG(LBKT)>;
         };
@@ -89,7 +89,7 @@
                 FUN_1_LEFT                      FUN_1_RIGHT
                 FUN_2_LEFT                      FUN_2_RIGHT
                 FUN_3_LEFT                      FUN_3_RIGHT
-                FUN_2_THUMB_LEFT  &trans  FUN_2_THUMB_RIGHT
+                FUN_THUMB_LEFT_2  &trans  FUN_THUMB_RIGHT_2
 
             >;
             sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN>;
@@ -101,7 +101,7 @@
                 MSE_1_LEFT                        MSE_1_RIGHT
                 MSE_2_LEFT                        MSE_2_RIGHT
                 MSE_3_LEFT                        MSE_3_RIGHT
-                MSE_2_THUMB_LEFT  MISS_CTL  MSE_2_THUMB_RIGHT
+                MSE_THUMB_LEFT_2  MISS_CTL  MSE_THUMB_RIGHT_2
 
             >;
             sensor-bindings = <&inc_dec_kp LC(LEFT) LC(RIGHT)>;
@@ -113,7 +113,7 @@
                 ADD_1_LEFT                           ADD_1_RIGHT
                 ADD_2_LEFT                           ADD_2_RIGHT
                 ADD_3_LEFT                           ADD_3_RIGHT
-                ADD_2_THUMB_LEFT  &bootloader  ADD_2_THUMB_RIGHT
+                ADD_THUMB_LEFT_2  &bootloader  ADD_THUMB_RIGHT_2
 
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>; // normally RGB but not on this board
