@@ -18,10 +18,6 @@
 #include "behaviors.h" // definition of KEYS_L, KEYS_R, THUMBS must come before behaviors
 #include "layers.h"
 
-&soft_off {
-    hold-time-ms = <5000>; // Only turn off it the key is held for 5 seconds or longer.
-};
-
 / {
     keymap {
         compatible = "zmk,keymap";
