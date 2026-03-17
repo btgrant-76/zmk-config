@@ -174,6 +174,7 @@
             // vim
             vim_write_ls       { sequence = <V W>; bindings = <&vim_w>; };
             vim_write_quit_ls  { sequence = <V Q>; bindings = <&vim_wq>; };
+            vim_yank           { sequence = <V C>; bindings = <&vim_y>; };
 
             // parens
             parens_ls               { sequence = <P A>; bindings = <&pair LPAR RPAR>; };
@@ -269,6 +270,11 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp ESC &kp COLON &kp W &kp Q &kp ENTER>;
+        };
+        vim_y: vim_yank {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DQT &kp KP_PLUS &kp Y>;
         };
         log_out: log_out {
             #binding-cells = <0>;
