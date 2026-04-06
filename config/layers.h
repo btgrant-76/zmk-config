@@ -36,10 +36,10 @@
 
 
 #define NAV_1_LEFT         TAB_LFT    BACK       FWD        TAB_RGT      &up_dir
-#define NAV_2_LEFT         &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHFT    &kp CAPS
-#define NAV_3_LEFT         &none      &none      &none      &key_repeat  &none
+#define NAV_2_LEFT         &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHFT    &caps_word
+#define NAV_3_LEFT         &none      &none      &leader    &key_repeat  &none
 #define NAV_THUMB_LEFT_3   &none      &kp BSPC   &kp ENTER
-#define NAV_THUMB_LEFT_2   &none      &kp N  // TODO what's the N doing here?
+#define NAV_THUMB_LEFT_2   &none      &kp BSPC
 
 #define NAV_1_RIGHT        REDO_      PASTE_     COPY_      CUT_         UNDO_
 #define NAV_2_RIGHT        &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT    &kp SEMI
