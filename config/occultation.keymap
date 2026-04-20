@@ -17,10 +17,10 @@
                    5 6 7 8 9 \
                    11 /* Save */ 15 16 17 18 19 \
                    25 26 27 28 29
-#define THUMBS 30 31 32     33 34 35 // jlwffre encoder is at 32
+#define THUMBS 30 31 32     33 34 35
 // TODO do I want to keep the thumb combos? I might not use them on this board.
-#define FUN_LAYER_COMBO_POS 31 32
-#define MED_LAYER_COMBO_POS 33 34
+#define FUN_LAYER_COMBO_POS 30 31
+#define MED_LAYER_COMBO_POS 34 35
 #define STICKY_SHIFT_COMBO_POS 13 16
 #include "behaviors.h" // definition of KEYS_L, KEYS_R, THUMBS must come before behaviors
 #include "layers.h"
@@ -45,7 +45,6 @@
                 BASE_2_LEFT                          BASE_2_RIGHT
                 BASE_3_LEFT                          BASE_3_RIGHT
                 BASE_THUMB_LEFT_3              BASE_THUMB_RIGHT_3 // TODO the thumbs need to be rearranged so the innermost key is the resting thumb key. Reference Vault35 WKL ortho
-
             >;
         };
 
@@ -66,7 +65,6 @@
                 NUM_2_LEFT                        NUM_2_RIGHT
                 NUM_3_LEFT                        NUM_3_RIGHT
                 NUM_THUMB_LEFT_3            NUM_THUMB_RIGHT_3
-
             >;
         };
 
@@ -87,7 +85,6 @@
                 FUN_2_LEFT                      FUN_2_RIGHT
                 FUN_3_LEFT                      FUN_3_RIGHT
                 FUN_THUMB_LEFT_3          FUN_THUMB_RIGHT_3
-
             >;
         };
 
@@ -98,7 +95,6 @@
                 MSE_2_LEFT                        MSE_2_RIGHT
                 MSE_3_LEFT                        MSE_3_RIGHT
                 MSE_THUMB_LEFT_3            MSE_THUMB_RIGHT_3
-
             >;
         };
 
@@ -109,7 +105,6 @@
                 ADD_2_LEFT                           ADD_2_RIGHT
                 ADD_3_LEFT                           ADD_3_RIGHT
                 ADD_THUMB_LEFT_3               ADD_THUMB_RIGHT_3
-
             >;
         };
     };
