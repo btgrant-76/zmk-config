@@ -42,5 +42,8 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3.0
+    - name: zmk-config-occultation
+      remote: btgrant-76
+      revision: main
   self:
     path: config
