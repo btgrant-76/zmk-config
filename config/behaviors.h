@@ -11,6 +11,15 @@
 
 / {
     behaviors {
+        #ifndef STM
+        skq: sticky_key_quick_release {
+          compatible = "zmk,behavior-sticky-key";
+          #binding-cells = <1>;
+          bindings = <&kp>;
+          release-after-ms = <1000>;
+          quick-release;
+        };
+        #endif
         /* TAP HOLDS BEGIN */
        // in use
         lt: layer_tap { // this overrides the built-in layer-tap configuration https://zmk.dev/docs/keymaps/behaviors/hold-tap#custom-hold-tap-examples
@@ -231,7 +240,7 @@
            combo_sticky_shift {
                timeout-ms = <50>;
                key-positions = <STICKY_SHIFT_COMBO_POS>;
-               bindings = <&sk  LSHIFT>;
+               bindings = <&skq  LSHIFT>;
                layers = <0>;
            };
             #endif
