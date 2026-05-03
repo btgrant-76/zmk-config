@@ -84,7 +84,7 @@
                 FUN_1_LEFT                      FUN_1_RIGHT
                 FUN_2_LEFT                      FUN_2_RIGHT
                 FUN_3_LEFT                      FUN_3_RIGHT
-                &none FUN_THUMB_LEFT_3          FUN_THUMB_RIGHT_3 &none
+                &none FUN_THUMB_LEFT_2          FUN_THUMB_RIGHT_2 &none
             >;
         };
 
@@ -94,7 +94,7 @@
                 MSE_1_LEFT                        MSE_1_RIGHT
                 MSE_2_LEFT                        MSE_2_RIGHT
                 MSE_3_LEFT                        MSE_3_RIGHT
-                &none MSE_THUMB_LEFT_3            MSE_THUMB_RIGHT_3 &none
+                &none MSE_THUMB_LEFT_2            MSE_THUMB_RIGHT_2 &none
             >;
         };
 
@@ -104,7 +104,7 @@
                 ADD_1_LEFT                           ADD_1_RIGHT
                 ADD_2_LEFT                           ADD_2_RIGHT
                 ADD_3_LEFT                           ADD_3_RIGHT
-                &none ADD_THUMB_LEFT_3               ADD_THUMB_RIGHT_3 &none
+                &none ADD_THUMB_LEFT_2               ADD_THUMB_RIGHT_2 &none
             >;
         };
     };
