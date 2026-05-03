@@ -228,12 +228,12 @@
         combos {
             compatible = "zmk,combos";
             #ifndef STM
-//            combo_sticky_shift {
-//                timeout-ms = <50>;
-//                key-positions = <STICKY_SHIFT_COMBO_POS>;
-//                bindings = <&sk LSFT>;
-//                layers = <0>;
-//            };
+           combo_sticky_shift {
+               timeout-ms = <50>;
+               key-positions = <STICKY_SHIFT_COMBO_POS>;
+               bindings = <&sk  LSHIFT>;
+               layers = <0>;
+           };
             #endif
             combo_fun_layer {
                 timeout-ms = <50>;
@@ -247,6 +247,8 @@
                 bindings = <&mo 1>;
                 layers = <0>;
             };
+            // TODO add a shift OSM combos
+            // TODO try a combos for esc and enter
         };
     };
 
