@@ -1,10 +1,11 @@
-#define BASE_1_LEFT        &kp Q         &kp W /*E_HYPR*/ &kp E  &kp R      &kp T
-#define BASE_2_LEFT        HRML(A,       S,           D,         F)         &kp G
+// TODO replace the layer numbers with readable aliases
+#define BASE_1_LEFT        &kp Q         &kp W        &kp E      &kp R      &kp T
+#define BASE_2_LEFT        HRML(A,       S,           D,         F)         &lt 5 G
 #define BASE_3_LEFT        &z_esc        &kp X        &kp C      &kp V      B_MEH
 #define BASE_THUMB_LEFT_3  &lt 4 TAB     &lt 2 BSPC   &lt 5 ESC
 #define BASE_THUMB_LEFT_2  &lt 5 TAB     &lt 2 BSPC
 
-#define BASE_1_RIGHT       &kp Y         &kp U /*I_HYPR*/ &kp I  &kp O      &kp P
+#define BASE_1_RIGHT       &kp Y         &kp U        &kp I      &kp O      &kp P
 #define BASE_2_RIGHT       &kp H         HRMR3(J,     K,         L)         &qot_smi
 #define BASE_3_RIGHT       N_MEH         &kp M        &cma_lprn  &dot_rprn  &sls_ent
 #define BASE_THUMB_RIGHT_2 &lt 3 SPACE   &lt 5 DEL
