@@ -83,6 +83,6 @@
 
 #define ADD_1_RIGHT        REDO_       PASTE_        COPY_         CUT_          UNDO_
 #define ADD_2_RIGHT        &none       &none         &none         &none         &none
-#define ADD_3_RIGHT        &none       &none         &none         &none         &none
+#define ADD_3_RIGHT        &bootloader &none         &none         &none         &none
 #define ADD_THUMB_RIGHT_3  &none       &none         &none
 #define ADD_THUMB_RIGHT_2  &trans      &trans
