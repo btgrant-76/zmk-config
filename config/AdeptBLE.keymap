@@ -93,8 +93,8 @@
     default_layer {
       display-name = "Default";
       bindings = <
-        &ltm BLTH BACK  &ltm DEVICE FWD   &mkp MCLK     &mkp RCLK
-        &mkp LCLK                                       &mto SCRLM SNIPE
+        &ltm BLTH BACK  &ltm DEVICE FWD   &mkp MCLK     &mto SCRLM SNIPE
+        &mkp LCLK                                       &mkp RCLK
       >;
     };
     scroll_tap_layer {
@@ -128,8 +128,8 @@
     snipe_layer {
       display-name = "Snipe";
       bindings = <
-        &trans          &trans            &trans        &lth SCRLM RCLK
-        &trans                                          &to DEFAULT
+        &trans          &trans            &trans        &to DEFAULT
+        &trans                                          &lth SCRLM RCLK
       >;
     };
     media_layer {
