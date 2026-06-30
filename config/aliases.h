@@ -1,6 +1,6 @@
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &hrml LCTRL k1  &hrml LALT k2  &gui_hrml LGUI k3  &hrml LSHFT k4
-#define HRMR(k1,k2,k3,k4) &hrmr RSHFT k1  &hrmr RGUI k2  &hrmr LALT k3  &hrmr RCTRL k4
+#define HRML(k1,k2,k3,k4) &hrml LCTRL k1  &hrml LALT k2  &gui_hrml LGUI k3  &shift_hrml LSHFT k4
+#define HRMR(k1,k2,k3,k4) &shift_hrmr RSHFT k1  &hrmr RGUI k2  &hrmr LALT k3  &hrmr RCTRL k4
 #define HRMR3(k1,k2,k3) &hrmr RSHFT k1  &hrmr RGUI k2  &hrmr LALT k3
 
 #define BACK &kp LG(LBKT)

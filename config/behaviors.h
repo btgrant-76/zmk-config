@@ -58,6 +58,16 @@
             hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release; // recommended for use with HRM https://zmk.dev/docs/keymaps/behaviors/hold-tap#positional-hold-tap-and-hold-trigger-key-positions
         };
+        shift_hrml: shift_home_row_mod_left_hand { // based on urob's settings
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <TT_UROB>;
+            quick-tap-ms = <QTT_UROB>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release; // recommended for use with HRM https://zmk.dev/docs/keymaps/behaviors/hold-tap#positional-hold-tap-and-hold-trigger-key-positions
+        };
         gui_hrml: gui_home_row_mod_left_hand { // based on urob's settings
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -72,6 +82,16 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
+            tapping-term-ms = <TT_UROB>;
+            quick-tap-ms = <QTT_UROB>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release; // recommended for use with HRM https://zmk.dev/docs/keymaps/behaviors/hold-tap#positional-hold-tap-and-hold-trigger-key-positions
+        };
+        shift_hrmr: shift_home_row_mod_right_hand { // based on urob's settings
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
             tapping-term-ms = <TT_UROB>;
             quick-tap-ms = <QTT_UROB>;
             bindings = <&kp>, <&kp>;
