@@ -8,6 +8,7 @@
 #define TT_UROB 280
 #define QTT_UROB 175
 #define REQ_P_IDLE_UROB 150
+#define TT_HRM_SHIFT 105
 
 / {
     behaviors {
