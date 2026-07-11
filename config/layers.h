@@ -49,7 +49,7 @@
 #define NAV_THUMB_RIGHT_2  &none      &none
 
 
-#define FUN_1_LEFT         &log_out  &none     &scrn2clp  &scrn2fl   &none
+#define FUN_1_LEFT         LOG_OUT   &none     SCRN2CLP   SCRN2FL    &none
 #define FUN_2_LEFT         &kp LCTL  &kp LALT  &kp LGUI   &kp LSHFT  &kp C_BRI_UP
 #define FUN_3_LEFT         &none     &none     &none      &none      &kp C_BRI_DN
 #define FUN_THUMB_LEFT_3   &none     &mo 5     &none

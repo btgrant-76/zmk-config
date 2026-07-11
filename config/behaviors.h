@@ -308,32 +308,6 @@
             #binding-cells = <0>;
             bindings = <&kp DQT &kp KP_PLUS &kp Y>;
         };
-        log_out: log_out {
-            #binding-cells = <0>;
-            compatible = "zmk,behavior-macro";
-            wait-ms = <40>;
-            tap-ms = <40>;
-            bindings =
-                <&macro_press   &kp LCTRL &kp LGUI>,
-                <&macro_tap     &kp Q>,
-                <&macro_release &kp LCTRL &kp LGUI>;
-        };
-        scrn2clp: scrn2clp {
-            #binding-cells = <0>;
-            compatible = "zmk,behavior-macro";
-            bindings =
-                <&macro_press   &kp LGUI &kp LCTRL &kp LSHFT>,
-                <&macro_tap     &kp N4>,
-                <&macro_release &kp LGUI &kp LCTRL &kp LSHFT>;
-        };
-        scrn2fl: scrn2fl {
-            #binding-cells = <0>;
-            compatible = "zmk,behavior-macro";
-            bindings =
-                <&macro_press   &kp LGUI &kp LSHFT>,
-                <&macro_tap     &kp N4>,
-                <&macro_release &kp LGUI &kp LSHFT>;
-        };
         pair: pair {
             compatible = "zmk,behavior-macro-two-param";
             #binding-cells = <2>;

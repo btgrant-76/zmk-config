@@ -26,3 +26,8 @@
 
 #define TAB_LFT &kp LS(LG(LBKT))
 #define TAB_RGT &kp LS(LG(RBKT))
+
+/** macOS macros **/
+#define LOG_OUT &kp LG(LC(Q))
+#define SCRN2CLP &kp LG(LC(LS(N4)))
+#define SCRN2FL &kp LG(LS(N4))
