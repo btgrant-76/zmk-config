@@ -62,8 +62,8 @@
         shift_hrml: shift_home_row_mod_left_hand { // based on urob's settings
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <TT_UROB>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <TT_HRM_SHIFT>;
             quick-tap-ms = <QTT_UROB>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
@@ -92,8 +92,8 @@
         shift_hrmr: shift_home_row_mod_right_hand { // based on urob's settings
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <TT_UROB>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <TT_HRM_SHIFT>;
             quick-tap-ms = <QTT_UROB>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
@@ -257,6 +257,7 @@
 
         combos {
             compatible = "zmk,combos";
+            /*
             #ifndef STM
            combo_sticky_shift {
                timeout-ms = <50>;
@@ -265,6 +266,7 @@
                layers = <0>;
            };
             #endif
+            */
             combo_fun_layer {
                 timeout-ms = <50>;
                 key-positions = <FUN_LAYER_COMBO_POS>;
@@ -277,8 +279,6 @@
                 bindings = <&mo 1>;
                 layers = <0>;
             };
-            // TODO add a shift OSM combos
-            // TODO try a combos for esc and enter
         };
     };
 
