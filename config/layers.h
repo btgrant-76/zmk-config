@@ -20,8 +20,8 @@
 #define MED_1_RIGHT        &none      &none        &none        &none      &none
 #define MED_2_RIGHT        &none      &none        &none        &none      &none
 #define MED_3_RIGHT        &none      &none        &none        &none      &none
-#define MED_THUMB_RIGHT_3  &none      &none        &none
-#define MED_THUMB_RIGHT_2  &none      &none
+#define MED_THUMB_RIGHT_3  &kp C_PP   &kp C_MUTE   &none
+#define MED_THUMB_RIGHT_2  &kp C_PP   &kp C_MUTE
 
 #define NUM_1_LEFT         UNDO_         CUT_      COPY_       PASTE_       REDO_
 #define NUM_2_LEFT         &kp LCTRL     &kp LALT  &kp LGUI    &kp LSHFT    &caps_word
