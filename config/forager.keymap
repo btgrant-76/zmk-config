@@ -37,7 +37,7 @@
                 BASE_1_LEFT              BASE_1_RIGHT
                 BASE_2_LEFT              BASE_2_RIGHT
                 BASE_3_LEFT              BASE_3_RIGHT
-                &lt 2 BSPC  &lt 5 TAB    &lt 5 DEL   &lt 3 SPACE
+                BASE_THUMB_LEFT_2  BASE_THUMB_RIGHT_2
             >;
         };
 
@@ -47,7 +47,7 @@
                 MED_1_LEFT              MED_1_RIGHT
                 MED_2_LEFT              MED_2_RIGHT
                 MED_3_LEFT              MED_3_RIGHT
-                &kp C_PP &kp C_MUTE     &none &none
+                MED_THUMB_LEFT_2  MED_THUMB_RIGHT_2
             >;
         };
 
@@ -57,7 +57,7 @@
                 NUM_1_LEFT              NUM_1_RIGHT
                 NUM_2_LEFT              NUM_2_RIGHT
                 NUM_3_LEFT              NUM_3_RIGHT
-                &trans &kp BSPC         &mins_space &zero_space
+                NUM_THUMB_LEFT_2  NUM_THUMB_RIGHT_2
             >;
         };
 
@@ -67,7 +67,7 @@
                 NAV_1_LEFT              NAV_1_RIGHT
                 NAV_2_LEFT              NAV_2_RIGHT
                 NAV_3_LEFT              NAV_3_RIGHT
-                &kp N  &none            &none  &none
+                NAV_THUMB_LEFT_2  NAV_THUMB_RIGHT_2
             >;
         };
 
@@ -77,7 +77,7 @@
                 FUN_1_LEFT              FUN_1_RIGHT
                 FUN_2_LEFT              FUN_2_RIGHT
                 FUN_3_LEFT              FUN_3_RIGHT
-                &mo 5  &none            &none  &mo 6
+                FUN_THUMB_LEFT_2  FUN_THUMB_RIGHT_2
             >;
         };
 
@@ -87,7 +87,7 @@
                 MSE_1_LEFT              MSE_1_RIGHT
                 MSE_2_LEFT              MSE_2_RIGHT
                 MSE_3_LEFT              MSE_3_RIGHT
-                &none &none             &none &none
+                MSE_THUMB_LEFT_2  MSE_THUMB_RIGHT_2
             >;
         };
 
@@ -97,7 +97,7 @@
                 ADD_1_LEFT              ADD_1_RIGHT
                 ADD_2_LEFT              ADD_2_RIGHT
                 ADD_3_LEFT              ADD_3_RIGHT
-                &trans &trans           &trans &trans
+                ADD_THUMB_LEFT_2  ADD_THUMB_RIGHT_2
             >;
         };
     };
