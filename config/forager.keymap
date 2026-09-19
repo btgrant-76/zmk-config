@@ -37,7 +37,8 @@
                 BASE_1_LEFT              BASE_1_RIGHT
                 BASE_2_LEFT              BASE_2_RIGHT
                 BASE_3_LEFT              BASE_3_RIGHT
-                &lt 2 BSPC  &lt 5 TAB    &lt 5 DEL   &lt 3 SPACE
+                &lt 5 TAB &lt 2 BSPC     &lt 3 SPACE &lt 5 DEL
+//                &lt 2 BSPC  &lt 5 TAB    &lt 5 DEL   &lt 3 SPACE
             >;
         };
 
@@ -47,7 +48,8 @@
                 MED_1_LEFT              MED_1_RIGHT
                 MED_2_LEFT              MED_2_RIGHT
                 MED_3_LEFT              MED_3_RIGHT
-                &kp C_PP &kp C_MUTE     &none &none
+                 &kp C_MUTE &kp C_PP    &none &none
+//                &kp C_PP &kp C_MUTE     &none &none
             >;
         };
 
@@ -57,7 +59,8 @@
                 NUM_1_LEFT              NUM_1_RIGHT
                 NUM_2_LEFT              NUM_2_RIGHT
                 NUM_3_LEFT              NUM_3_RIGHT
-                &trans &kp BSPC         &mins_space &zero_space
+                &kp BSPC&trans          &mins_space &zero_space
+//                &trans &kp BSPC         &mins_space &zero_space
             >;
         };
 
@@ -67,7 +70,8 @@
                 NAV_1_LEFT              NAV_1_RIGHT
                 NAV_2_LEFT              NAV_2_RIGHT
                 NAV_3_LEFT              NAV_3_RIGHT
-                &kp N  &none            &none  &none
+                &none  &kp N            &none  &none
+//                &kp N  &none            &none  &none
             >;
         };
 
@@ -77,7 +81,8 @@
                 FUN_1_LEFT              FUN_1_RIGHT
                 FUN_2_LEFT              FUN_2_RIGHT
                 FUN_3_LEFT              FUN_3_RIGHT
-                &mo 5  &none            &none  &mo 6
+                &none  &mo 5            &mo 6 &none
+//                &mo 5  &none            &none  &mo 6
             >;
         };
 
