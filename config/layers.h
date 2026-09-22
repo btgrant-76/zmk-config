@@ -68,10 +68,13 @@
 #define MSE_THUMB_LEFT_3   &kp ESC         &none           &none
 #define MSE_THUMB_LEFT_2   &none           &none
 
+// mouse emulation defaults:  https://v0-3-branch.zmk.dev/docs/keymaps/behaviors/mouse-emulation#mouse-emulation-defines
+// ZMK_POINTING_DEFAULT_MOVE_VAL default: 600
+// ZMK_POINTING_DEFAULT_SCRL_VAL default: 10
 #define MSE_1_RIGHT        &none           &none           &none           &none            &none
 // #define MSE_2_RIGHT        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP    &mmv MOVE_RIGHT  &none
-#define MSE_2_RIGHT        &mmv MOVE_X(-50)  &mmv MOVE_Y(50)  &mmv MOVE_Y(-50)    &mmv MOVE_X(50)  &none
-#define MSE_3_RIGHT        &msc MOVE_X(-2)  &msc MOVE_Y(2)  &msc MOVE_Y(-2)    &msc MOVE_X(2)  &none
+#define MSE_2_RIGHT        &mmv MOVE_X(-1000)  &mmv MOVE_Y(1000)  &mmv MOVE_Y(-1000)    &mmv MOVE_X(1000)  &none //
+#define MSE_3_RIGHT        &msc MOVE_X(-20)  &msc MOVE_Y(20)  &msc MOVE_Y(-20)    &msc MOVE_X(20)  &none
 // #define MSE_3_RIGHT        &msc SCRL_LEFT  &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_RIGHT  &none
 #define MSE_THUMB_RIGHT_3  &none           &none           &none
 #define MSE_THUMB_RIGHT_2  &none           &none
