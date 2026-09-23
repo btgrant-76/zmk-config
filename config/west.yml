@@ -16,6 +16,8 @@ manifest:
       url-base: https://github.com/carrefinho
     - name: caksoylar
       url-base: https://github.com/caksoylar
+    - name: bildermankawasaki
+      url-base: https://github.com/bildermankawasaki
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -44,6 +46,9 @@ manifest:
       revision: v0.3.0
     - name: zmk-config-occultation
       remote: btgrant-76
+      revision: main
+    - name: zmk-keyboard-totem
+      remote: bildermankawasaki
       revision: main
   self:
     path: config
