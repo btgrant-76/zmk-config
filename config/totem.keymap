@@ -42,7 +42,7 @@
             bindings = <
                 BASE_1_LEFT              BASE_1_RIGHT
                 BASE_2_LEFT              BASE_2_RIGHT
-          &kp Q BASE_3_LEFT              BASE_3_RIGHT &kp BSLH
+          &kp Q BASE_3_LEFT              BASE_3_RIGHT &kp RETURN
                 BASE_THUMB_LEFT_3  BASE_THUMB_RIGHT_3
             >;
         };
