@@ -27,7 +27,7 @@
 #define NUM_2_LEFT         &kp LCTRL     &kp LALT  &kp LGUI    &kp LSHFT    &caps_word
 #define NUM_3_LEFT         &kp ESC       &none     &leader     &key_repeat  &none
 #define NUM_THUMB_LEFT_3   &kp DEL       &none        &kp BSPC
-#define NUM_THUMB_LEFT_2   &kp BSPC      &trans
+#define NUM_THUMB_LEFT_2   &kp BSPC      &kp DEL
 
 #define NUM_1_RIGHT        &lbkt_par     &kp N7    &kp N8      &kp N9       &rbkt_par
 #define NUM_2_RIGHT        &kp EQUAL     &kp N4    &kp N5      &kp N6       &semi_quot
@@ -39,8 +39,8 @@
 #define NAV_1_LEFT         TAB_LFT    BACK       FWD        TAB_RGT      &up_dir
 #define NAV_2_LEFT         &kp LCTRL  &kp LALT   &kp LGUI   &kp LSHFT    &caps_word
 #define NAV_3_LEFT         &none      &none      &leader    &key_repeat  &none
-#define NAV_THUMB_LEFT_3   &none      &kp BSPC   &kp ENTER
-#define NAV_THUMB_LEFT_2   &none      &kp BSPC
+#define NAV_THUMB_LEFT_3   &none      &kp DEL    &kp ENTER
+#define NAV_THUMB_LEFT_2   &none      &kp DEL
 
 #define NAV_1_RIGHT        REDO_      PASTE_     COPY_      CUT_         UNDO_
 #define NAV_2_RIGHT        &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT    &kp SEMI
@@ -73,7 +73,7 @@
 // ZMK_POINTING_DEFAULT_SCRL_VAL default: 10
 #define MSE_1_RIGHT        &none           &none           &none           &none            &none
 // #define MSE_2_RIGHT        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP    &mmv MOVE_RIGHT  &none
-#define MSE_2_RIGHT        &mmv MOVE_X(-1000)  &mmv MOVE_Y(1000)  &mmv MOVE_Y(-1000)    &mmv MOVE_X(1000)  &none //
+#define MSE_2_RIGHT        &mmv MOVE_X(-900)  &mmv MOVE_Y(900)  &mmv MOVE_Y(-900)    &mmv MOVE_X(900)  &none
 #define MSE_3_RIGHT        &msc MOVE_X(-20)  &msc MOVE_Y(20)  &msc MOVE_Y(-20)    &msc MOVE_X(20)  &none
 // #define MSE_3_RIGHT        &msc SCRL_LEFT  &msc SCRL_UP    &msc SCRL_DOWN  &msc SCRL_RIGHT  &none
 #define MSE_THUMB_RIGHT_3  &none           &none           &none
