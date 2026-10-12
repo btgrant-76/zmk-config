@@ -41,7 +41,10 @@ west build -b nice_nano_v2 -d ./build/corne_left -- \
 ```shell
 west build -d ./build/forager_right -b seeeduino_xiao_ble -- \
   -DZMK_CONFIG=/workspaces/zmk-config/config \
-  -DSHIELD="forager_right rgbled_adapter"
+  -DSHIELD="forager_right rgbled_adapter" \
+  -DZMK_EXTRA_MODULES="/workspaces/zmk-modules/zmk-leader-key/;"\
+"/workspaces/zmk-modules/forager-zmk-module/;"\
+"/workspaces/zmk-modules/zmk-rgbled-widget/"
 ```
 
 ### forager-left
@@ -49,7 +52,10 @@ west build -d ./build/forager_right -b seeeduino_xiao_ble -- \
 ```shell
 west build -d ./build/forager_left -b seeeduino_xiao_ble -- \
   -DZMK_CONFIG=/workspaces/zmk-config/config \
-  -DSHIELD="forager_left rgbled_adapter"
+  -DSHIELD="forager_left rgbled_adapter" \
+  -DZMK_EXTRA_MODULES="/workspaces/zmk-modules/zmk-leader-key/;"\
+"/workspaces/zmk-modules/forager-zmk-module/;"\
+"/workspaces/zmk-modules/zmk-rgbled-widget/"
 ```
 
 ## Occultation
