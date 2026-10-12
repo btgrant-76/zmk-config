@@ -74,7 +74,7 @@
                 NAV_1_LEFT                        NAV_1_RIGHT
                 NAV_2_LEFT                        NAV_2_RIGHT
                 NAV_3_LEFT                        NAV_3_RIGHT
-                &none NAV_THUMB_LEFT_3            NAV_THUMB_RIGHT_3 &none
+                &none NAV_THUMB_LEFT_2            NAV_THUMB_RIGHT_2 &none
             >;
         };
 
