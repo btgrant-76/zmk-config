@@ -1,15 +1,14 @@
-// TODO replace the layer numbers with readable aliases
 #define BASE_1_LEFT        &kp Q         &kp W        &kp E      &kp R      &kp T
-#define BASE_2_LEFT        HRML(A,       S,           D,         F)         &lt 5 G
+#define BASE_2_LEFT        HRML(A,       S,           D,         F)         &lt MSE G
 #define BASE_3_LEFT        &z_esc        &kp X        &kp C      &kp V      B_MEH
-#define BASE_THUMB_LEFT_3  &lt 4 TAB     &lt 2 BSPC   &lt 5 ESC
-#define BASE_THUMB_LEFT_2  &lt 5 TAB     &lt 2 BSPC
+#define BASE_THUMB_LEFT_3  &lt FUN TAB   &lt NUM BSPC &lt MSE ESC
+#define BASE_THUMB_LEFT_2  &lt MSE TAB   &lt NUM BSPC
 
 #define BASE_1_RIGHT       &kp Y         &kp U        &kp I      &kp O      &kp P
 #define BASE_2_RIGHT       &kp H         HRMR3(J,     K,         L)         &qot_smi
 #define BASE_3_RIGHT       N_MEH         &kp M        &cma_lprn  &dot_rprn  &sls_ent
-#define BASE_THUMB_RIGHT_2 &lt 3 SPACE   &lt 5 DEL
-#define BASE_THUMB_RIGHT_3 &lt 5 RETURN  &lt 3 SPACE  &lt 1 DEL
+#define BASE_THUMB_RIGHT_2 &lt NAV SPACE &lt MSE DEL
+#define BASE_THUMB_RIGHT_3 &lt MSE RETURN  &lt NAV SPACE  &lt MED DEL
 
 #define MED_1_LEFT         &none      &none        &none        &none      &none
 #define MED_2_LEFT         &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &none
@@ -52,14 +51,14 @@
 #define FUN_1_LEFT         LOG_OUT   &none     SCRN2CLP   SCRN2FL    &none
 #define FUN_2_LEFT         &kp LCTL  &kp LALT  &kp LGUI   &kp LSHFT  &kp C_BRI_UP
 #define FUN_3_LEFT         &none     &none     &none      &none      &kp C_BRI_DN
-#define FUN_THUMB_LEFT_3   &none     &mo 5     &none
-#define FUN_THUMB_LEFT_2   &none     &mo 5
+#define FUN_THUMB_LEFT_3   &none     &mo MSE   &none
+#define FUN_THUMB_LEFT_2   &none     &mo MSE
 
 #define FUN_1_RIGHT        &none     &kp F7    &kp F8     &kp F9     &kp F12
 #define FUN_2_RIGHT        &none     &kp F4    &kp F5     &kp F6     &kp F11
 #define FUN_3_RIGHT        &none     &kp F1    &kp F2     &kp F3     &kp F10
-#define FUN_THUMB_RIGHT_3  &none     &mo 6     &none
-#define FUN_THUMB_RIGHT_2  &mo 6     &none
+#define FUN_THUMB_RIGHT_3  &none     &mo ADD   &none
+#define FUN_THUMB_RIGHT_2  &mo ADD   &none
 
 
 #define MSE_1_LEFT         UNDO_           CUT_            COPY_           PASTE_           REDO_

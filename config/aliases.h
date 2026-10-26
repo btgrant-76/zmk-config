@@ -1,3 +1,12 @@
+// Layer aliases
+#define BAS 0
+#define MED 1
+#define NUM 2
+#define NAV 3
+#define FUN 4
+#define MSE 5
+#define ADD 6
+
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &hrml LCTRL k1  &hrml LALT k2  &gui_hrml LGUI k3  &shift_hrml LSHFT k4
 #define HRMR(k1,k2,k3,k4) &shift_hrmr RSHFT k1  &hrmr RGUI k2  &hrmr LALT k3  &hrmr RCTRL k4
